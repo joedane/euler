@@ -1,0 +1,24 @@
+0123  -> swap first order
+0132  -> reset lowest order (0123), insert 2nd order, first offset
+0213  -> swap first order
+0231  -> reset (0123), insert 2nd order, second ofset
+0312  -> swap first order
+0321  -> reset (0123), insert 3rd order, first offset
+1023
+1032
+1203
+1230
+1302
+1320
+2013
+2031
+2103
+2130
+2301
+2310
+3012
+3021
+3102
+3120
+3201
+3210
