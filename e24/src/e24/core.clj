@@ -36,14 +36,12 @@
 
 
 (defn -main
-  "I don't do a whole lot ... yet."
+  "24th Project Euler problem"
   [& args]
-  (let [i 0
-        f (fn [v] 
-            (if (= i 5) (print-list v))
-            (set! i (inc 0))
-            )
-        ]
-    (iterate-lexicographically (vector 1 2 3 4 5) f)
-    )
+  (let [count (atom 1)
+        count-fn (fn [l]
+                   (if (= (deref count) 1000000) 
+                     (print-list l))
+                   (swap! count inc))]
+    (iterate-lexicographically (vector 0 1 2 3 4 5 6 7 8 9) count-fn))
   )
