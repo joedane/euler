@@ -38,5 +38,9 @@
 
 (defn -main
   [& args]
-  (filter #(special? (first %) (second %)) (make-all-posible-fractions))
+  (->>
+   (filter #(special? (first %) (second %)) (make-all-posible-fractions))
+   (map #(clojure.lang.Ratio. (biginteger (% 0)) (biginteger (% 1))))
+   (reduce *)
+   )
   )
