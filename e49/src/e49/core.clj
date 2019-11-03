@@ -40,12 +40,29 @@
    (map sort)
    ))
 
+(defn permutations [n]
+  (->>
+   (split-digits n)
+   (el/permutations)
+   (map digits-to-number)
+   (sort)
+   )
+  )
+
 (defn -main
   "Euler problem 49"
   [& args]
-  (let [l (make-permutations 1000 1020)]
-    (for [l l]
-      (map #(- %2 %1) l (rest l))
-      )
-    )
+  ((fn step [n result] 
+     (if (< n 3000)
+       (let [l (range n 10000 3330)]
+         (if (and (every? el/prime? l)
+                  (= 3 (count (clojure.set/intersection (into (hash-set) l)
+                                                        (into (hash-set) (permutations n))))))
+           (step (inc n) (cons l result))
+           (step (inc n) result))
+         )
+       result
+       )
+     ) 1000 []
+   )
   )

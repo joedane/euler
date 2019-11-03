@@ -101,6 +101,25 @@
     )
   )
 
+(defn heptagonal-numbers
+  ([] (heptagonal-numbers 1))
+  ([n]
+   (cons (/ (* n (- (* 5 n) 3)) 2)
+         (lazy-seq (heptagonal-numbers (inc n)))
+         )
+   )
+  )
+
+(defn octagonal-numbers
+  ([] (octagonal-numbers 1))
+  ([n]
+   (cons (* n (- (* 3 n) 2))
+         (lazy-seq (octagonal-numbers (inc n)))
+         )
+   )
+  )
+
+
 (def CHECK-PANDIGITAL (into (hash-set) (string/split "123456789" #"")))
 
 (defn is-pandigital 
@@ -110,4 +129,32 @@
   ([s] 
    (and (= 9 (count s))
         (= CHECK-PANDIGITAL (into (hash-set) (string/split s #"")))))
+  )
+
+(defn coerce-unformattable-number [n]
+  (cond
+    (instance? clojure.lang.BigInt n) (biginteger n)
+    (instance? clojure.lang.Ratio n) (double n)
+    :else n)
+  )
+
+(defn explode-digits [n]
+  "Return a list of strings from the input integer, one string per digit"
+  (let [s (format "%d" (coerce-unformattable-number n))
+        digits (string/split s #"")]
+    (map #(Integer/parseInt %) digits)
+    )
+  )
+
+(defn is-palindrome? [s]
+  (every? #(= (nth s %) (nth s (- (dec (count s)) %))) 
+          (range 0 (/ (count s) 2)))
+  )
+
+(defn is-palindromic? [n]
+  (is-palindrome? (format "%s" n))
+  )
+
+(defn reverse-digits [n]
+  (BigInteger. (apply str (reverse (format "%s" n))))
   )
