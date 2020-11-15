@@ -1,0 +1,31 @@
+(ns e77.core
+  (:require [euler-lib.core :as el])
+  (:gen-class))
+
+(defn n_seq [n max]
+  (take-while (partial > max)
+              (map (partial * n) (iterate inc 0)))) 
+
+(defn p_from_seq [seq]
+  (let [r (make-array Integer/TYPE (inc (apply max seq)))]
+    (doseq [i (range (count seq))]
+      (aset r (nth seq i) 1))
+    r)
+  )
+  
+(defn p_mult [p1 p2]
+  (let [r (make-array Integer/TYPE (dec (+ (count p1) (count p2))))]
+    (doseq [i (range (count p1))
+            j (range (count p2))]
+      (aset r (+ i j) (+ (aget r (+ i j))
+                         (* (aget p1 i) (aget p2 j))))
+      )
+    r
+    )
+  )
+  
+
+(defn -main
+  "I don't do a whole lot ... yet."
+  [& args]
+  (println "Hello, World!"))
