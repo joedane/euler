@@ -1,0 +1,2199 @@
+starting at 0, rolled a 4
+tentative new position: 4
+starting at 4, rolled a 8
+tentative new position: 12
+starting at 12, rolled a 10
+tentative new position: 22
+CH: Goto(0)
+starting at 0, rolled a 9
+tentative new position: 9
+starting at 9, rolled a 5
+tentative new position: 14
+starting at 14, rolled a 6
+tentative new position: 20
+starting at 20, rolled a 7
+tentative new position: 27
+starting at 27, rolled a 9
+tentative new position: 36
+CH: Ignore
+starting at 36, rolled a 5
+tentative new position: 1
+starting at 1, rolled a 12
+tentative new position: 13
+starting at 13, rolled a 6
+tentative new position: 19
+starting at 19, rolled a 3
+tentative new position: 22
+CH: Goto(5)
+starting at 5, rolled a 8
+tentative new position: 13
+starting at 13, rolled a 6
+tentative new position: 19
+starting at 19, rolled a 11
+tentative new position: 30
+starting at 11, rolled a 7
+tentative new position: 18
+starting at 18, rolled a 7
+tentative new position: 25
+starting at 25, rolled a 6
+tentative new position: 31
+starting at 31, rolled a 4
+tentative new position: 35
+starting at 35, rolled a 6
+tentative new position: 1
+starting at 1, rolled a 7
+tentative new position: 8
+starting at 8, rolled a 9
+tentative new position: 17
+CC: Ignore
+starting at 17, rolled a 6
+tentative new position: 23
+starting at 23, rolled a 4
+tentative new position: 27
+starting at 27, rolled a 10
+tentative new position: 37
+starting at 37, rolled a 8
+tentative new position: 5
+starting at 5, rolled a 7
+tentative new position: 12
+starting at 12, rolled a 5
+tentative new position: 17
+CC: Ignore
+starting at 17, rolled a 8
+tentative new position: 25
+starting at 25, rolled a 8
+tentative new position: 33
+CC: Ignore
+starting at 33, rolled a 6
+tentative new position: 39
+starting at 39, rolled a 8
+tentative new position: 7
+CH: GotoNextR
+starting at 15, rolled a 4
+tentative new position: 19
+starting at 19, rolled a 3
+tentative new position: 22
+CH: GotoNextR
+starting at 25, rolled a 4
+tentative new position: 29
+starting at 29, rolled a 9
+tentative new position: 38
+starting at 38, rolled a 7
+tentative new position: 5
+starting at 5, rolled a 7
+tentative new position: 12
+starting at 12, rolled a 9
+tentative new position: 21
+starting at 21, rolled a 4
+tentative new position: 25
+starting at 25, rolled a 5
+tentative new position: 30
+starting at 11, rolled a 6
+tentative new position: 17
+CC: Ignore
+starting at 17, rolled a 11
+tentative new position: 28
+starting at 28, rolled a 6
+tentative new position: 34
+starting at 34, rolled a 11
+tentative new position: 5
+starting at 5, rolled a 8
+tentative new position: 13
+starting at 13, rolled a 4
+tentative new position: 17
+CC: Ignore
+starting at 17, rolled a 5
+tentative new position: 22
+CH: Ignore
+starting at 22, rolled a 7
+tentative new position: 29
+starting at 29, rolled a 9
+tentative new position: 38
+starting at 38, rolled a 4
+tentative new position: 2
+CC: Ignore
+starting at 2, rolled a 7
+tentative new position: 9
+starting at 9, rolled a 8
+tentative new position: 17
+CC: Ignore
+starting at 17, rolled a 8
+tentative new position: 25
+starting at 25, rolled a 11
+tentative new position: 36
+CH: Goto(24)
+starting at 24, rolled a 6
+tentative new position: 30
+starting at 11, rolled a 9
+tentative new position: 20
+starting at 20, rolled a 7
+tentative new position: 27
+starting at 27, rolled a 7
+tentative new position: 34
+starting at 34, rolled a 7
+tentative new position: 1
+starting at 1, rolled a 10
+tentative new position: 11
+starting at 11, rolled a 6
+tentative new position: 17
+CC: Ignore
+starting at 17, rolled a 4
+tentative new position: 21
+starting at 21, rolled a 4
+tentative new position: 25
+starting at 25, rolled a 8
+tentative new position: 33
+CC: Ignore
+starting at 33, rolled a 9
+tentative new position: 2
+CC: Goto(0)
+starting at 0, rolled a 2
+tentative new position: 2
+CC: Ignore
+starting at 2, rolled a 5
+tentative new position: 7
+CH: Goto(39)
+starting at 39, rolled a 11
+tentative new position: 10
+starting at 10, rolled a 7
+tentative new position: 17
+CC: Ignore
+starting at 17, rolled a 9
+tentative new position: 26
+starting at 26, rolled a 6
+tentative new position: 32
+starting at 32, rolled a 7
+tentative new position: 39
+starting at 39, rolled a 5
+tentative new position: 4
+starting at 4, rolled a 4
+tentative new position: 8
+starting at 8, rolled a 3
+tentative new position: 11
+starting at 11, rolled a 10
+tentative new position: 21
+starting at 21, rolled a 11
+tentative new position: 32
+starting at 32, rolled a 8
+tentative new position: 0
+starting at 0, rolled a 9
+tentative new position: 9
+starting at 9, rolled a 5
+tentative new position: 14
+starting at 14, rolled a 8
+tentative new position: 22
+CH: Ignore
+starting at 22, rolled a 8
+tentative new position: 30
+starting at 11, rolled a 8
+tentative new position: 19
+starting at 19, rolled a 2
+tentative new position: 21
+starting at 21, rolled a 7
+tentative new position: 28
+starting at 28, rolled a 7
+tentative new position: 35
+starting at 35, rolled a 10
+tentative new position: 5
+starting at 5, rolled a 9
+tentative new position: 14
+starting at 14, rolled a 2
+tentative new position: 16
+starting at 16, rolled a 8
+tentative new position: 24
+starting at 24, rolled a 12
+tentative new position: 36
+CH: Ignore
+starting at 36, rolled a 8
+tentative new position: 4
+starting at 4, rolled a 8
+tentative new position: 12
+starting at 12, rolled a 4
+tentative new position: 16
+starting at 16, rolled a 8
+tentative new position: 24
+starting at 24, rolled a 7
+tentative new position: 31
+starting at 31, rolled a 3
+tentative new position: 34
+starting at 34, rolled a 4
+tentative new position: 38
+starting at 38, rolled a 6
+tentative new position: 4
+starting at 4, rolled a 10
+tentative new position: 14
+starting at 14, rolled a 10
+tentative new position: 24
+starting at 24, rolled a 11
+tentative new position: 35
+starting at 35, rolled a 7
+tentative new position: 2
+CC: Ignore
+starting at 2, rolled a 10
+tentative new position: 12
+starting at 12, rolled a 8
+tentative new position: 20
+starting at 20, rolled a 6
+tentative new position: 26
+starting at 26, rolled a 8
+tentative new position: 34
+starting at 34, rolled a 6
+tentative new position: 0
+starting at 0, rolled a 7
+tentative new position: 7
+CH: GotoNextU
+starting at 12, rolled a 5
+tentative new position: 17
+CC: Ignore
+starting at 17, rolled a 11
+tentative new position: 28
+starting at 28, rolled a 2
+tentative new position: 30
+starting at 11, rolled a 8
+tentative new position: 19
+starting at 19, rolled a 8
+tentative new position: 27
+starting at 27, rolled a 11
+tentative new position: 38
+starting at 38, rolled a 5
+tentative new position: 3
+starting at 3, rolled a 7
+tentative new position: 10
+starting at 10, rolled a 12
+tentative new position: 22
+CH: GoBack3
+starting at 19, rolled a 6
+tentative new position: 25
+starting at 25, rolled a 8
+tentative new position: 33
+CC: Ignore
+starting at 33, rolled a 7
+tentative new position: 0
+starting at 0, rolled a 8
+tentative new position: 8
+starting at 8, rolled a 9
+tentative new position: 17
+CC: Goto(11)
+starting at 11, rolled a 10
+tentative new position: 21
+starting at 21, rolled a 8
+tentative new position: 29
+starting at 29, rolled a 8
+tentative new position: 37
+starting at 37, rolled a 7
+tentative new position: 4
+starting at 4, rolled a 11
+tentative new position: 15
+starting at 15, rolled a 12
+tentative new position: 27
+starting at 27, rolled a 12
+tentative new position: 39
+starting at 39, rolled a 8
+tentative new position: 7
+CH: Goto(11)
+starting at 11, rolled a 4
+tentative new position: 15
+starting at 15, rolled a 10
+tentative new position: 25
+starting at 25, rolled a 8
+tentative new position: 33
+CC: Ignore
+starting at 33, rolled a 7
+tentative new position: 0
+starting at 0, rolled a 10
+tentative new position: 10
+starting at 10, rolled a 9
+tentative new position: 19
+starting at 19, rolled a 6
+tentative new position: 25
+starting at 25, rolled a 9
+tentative new position: 34
+starting at 34, rolled a 12
+tentative new position: 6
+starting at 6, rolled a 3
+tentative new position: 9
+starting at 9, rolled a 9
+tentative new position: 18
+starting at 18, rolled a 9
+tentative new position: 27
+starting at 27, rolled a 8
+tentative new position: 35
+starting at 35, rolled a 3
+tentative new position: 38
+starting at 38, rolled a 3
+tentative new position: 1
+starting at 1, rolled a 8
+tentative new position: 9
+starting at 9, rolled a 5
+tentative new position: 14
+starting at 14, rolled a 5
+tentative new position: 19
+starting at 19, rolled a 5
+tentative new position: 24
+starting at 24, rolled a 4
+tentative new position: 28
+starting at 28, rolled a 5
+tentative new position: 33
+CC: Ignore
+starting at 33, rolled a 6
+tentative new position: 39
+starting at 39, rolled a 11
+tentative new position: 10
+starting at 10, rolled a 9
+tentative new position: 19
+starting at 19, rolled a 8
+tentative new position: 27
+starting at 27, rolled a 6
+tentative new position: 33
+CC: Ignore
+starting at 33, rolled a 5
+tentative new position: 38
+starting at 38, rolled a 7
+tentative new position: 5
+starting at 5, rolled a 11
+tentative new position: 16
+starting at 16, rolled a 9
+tentative new position: 25
+starting at 25, rolled a 6
+tentative new position: 31
+starting at 31, rolled a 9
+tentative new position: 0
+starting at 0, rolled a 10
+tentative new position: 10
+starting at 10, rolled a 8
+tentative new position: 18
+starting at 18, rolled a 3
+tentative new position: 21
+starting at 21, rolled a 7
+tentative new position: 28
+starting at 28, rolled a 7
+tentative new position: 35
+starting at 35, rolled a 11
+tentative new position: 6
+starting at 6, rolled a 4
+tentative new position: 10
+starting at 10, rolled a 10
+tentative new position: 20
+starting at 20, rolled a 7
+tentative new position: 27
+starting at 27, rolled a 3
+tentative new position: 30
+starting at 11, rolled a 10
+tentative new position: 21
+starting at 21, rolled a 8
+tentative new position: 29
+starting at 29, rolled a 7
+tentative new position: 36
+CH: Goto(11)
+starting at 11, rolled a 10
+tentative new position: 21
+starting at 21, rolled a 7
+tentative new position: 28
+starting at 28, rolled a 9
+tentative new position: 37
+starting at 37, rolled a 9
+tentative new position: 6
+starting at 6, rolled a 10
+tentative new position: 16
+starting at 16, rolled a 6
+tentative new position: 22
+CH: Ignore
+starting at 22, rolled a 6
+tentative new position: 28
+starting at 28, rolled a 3
+tentative new position: 31
+starting at 31, rolled a 6
+tentative new position: 37
+starting at 37, rolled a 6
+tentative new position: 3
+starting at 3, rolled a 7
+tentative new position: 10
+starting at 10, rolled a 9
+tentative new position: 19
+starting at 19, rolled a 11
+tentative new position: 30
+starting at 11, rolled a 3
+tentative new position: 14
+starting at 14, rolled a 4
+tentative new position: 18
+starting at 18, rolled a 6
+tentative new position: 24
+starting at 24, rolled a 7
+tentative new position: 31
+starting at 31, rolled a 11
+tentative new position: 2
+CC: Goto(11)
+starting at 11, rolled a 9
+tentative new position: 20
+starting at 20, rolled a 6
+tentative new position: 26
+starting at 26, rolled a 6
+tentative new position: 32
+starting at 32, rolled a 7
+tentative new position: 39
+starting at 39, rolled a 7
+tentative new position: 6
+starting at 6, rolled a 8
+tentative new position: 14
+starting at 14, rolled a 7
+tentative new position: 21
+starting at 21, rolled a 4
+tentative new position: 25
+starting at 25, rolled a 7
+tentative new position: 32
+starting at 32, rolled a 8
+tentative new position: 0
+starting at 0, rolled a 9
+tentative new position: 9
+starting at 9, rolled a 9
+tentative new position: 18
+starting at 18, rolled a 8
+tentative new position: 26
+starting at 26, rolled a 9
+tentative new position: 35
+starting at 35, rolled a 11
+tentative new position: 6
+starting at 6, rolled a 6
+tentative new position: 12
+starting at 12, rolled a 6
+tentative new position: 18
+starting at 18, rolled a 8
+tentative new position: 26
+starting at 26, rolled a 5
+tentative new position: 31
+starting at 31, rolled a 2
+tentative new position: 33
+CC: Ignore
+starting at 33, rolled a 6
+tentative new position: 39
+starting at 39, rolled a 10
+tentative new position: 9
+starting at 9, rolled a 5
+tentative new position: 14
+starting at 14, rolled a 8
+tentative new position: 22
+CH: Ignore
+starting at 22, rolled a 9
+tentative new position: 31
+starting at 31, rolled a 10
+tentative new position: 1
+starting at 1, rolled a 4
+tentative new position: 5
+starting at 5, rolled a 6
+tentative new position: 11
+starting at 11, rolled a 8
+tentative new position: 19
+starting at 19, rolled a 7
+tentative new position: 26
+starting at 26, rolled a 9
+tentative new position: 35
+starting at 35, rolled a 7
+tentative new position: 2
+CC: Ignore
+starting at 2, rolled a 11
+tentative new position: 13
+starting at 13, rolled a 7
+tentative new position: 20
+starting at 20, rolled a 9
+tentative new position: 29
+starting at 29, rolled a 5
+tentative new position: 34
+starting at 34, rolled a 10
+tentative new position: 4
+starting at 4, rolled a 10
+tentative new position: 14
+starting at 14, rolled a 5
+tentative new position: 19
+starting at 19, rolled a 7
+tentative new position: 26
+starting at 26, rolled a 9
+tentative new position: 35
+starting at 35, rolled a 6
+tentative new position: 1
+starting at 1, rolled a 7
+tentative new position: 8
+starting at 8, rolled a 9
+tentative new position: 17
+CC: Ignore
+starting at 17, rolled a 10
+tentative new position: 27
+starting at 27, rolled a 7
+tentative new position: 34
+starting at 34, rolled a 7
+tentative new position: 1
+starting at 1, rolled a 9
+tentative new position: 10
+starting at 10, rolled a 8
+tentative new position: 18
+starting at 18, rolled a 6
+tentative new position: 24
+starting at 24, rolled a 4
+tentative new position: 28
+starting at 28, rolled a 7
+tentative new position: 35
+starting at 35, rolled a 7
+tentative new position: 2
+CC: Ignore
+starting at 2, rolled a 7
+tentative new position: 9
+starting at 9, rolled a 10
+tentative new position: 19
+starting at 19, rolled a 8
+tentative new position: 27
+starting at 27, rolled a 7
+tentative new position: 34
+starting at 34, rolled a 10
+tentative new position: 4
+starting at 4, rolled a 3
+tentative new position: 7
+CH: GotoNextU
+starting at 12, rolled a 10
+tentative new position: 22
+CH: Goto(11)
+starting at 11, rolled a 6
+tentative new position: 17
+CC: Ignore
+starting at 17, rolled a 10
+tentative new position: 27
+starting at 27, rolled a 11
+tentative new position: 38
+starting at 38, rolled a 3
+tentative new position: 1
+starting at 1, rolled a 4
+tentative new position: 5
+starting at 5, rolled a 3
+tentative new position: 8
+starting at 8, rolled a 4
+tentative new position: 12
+starting at 12, rolled a 8
+tentative new position: 20
+starting at 20, rolled a 4
+tentative new position: 24
+starting at 24, rolled a 6
+tentative new position: 30
+starting at 11, rolled a 11
+tentative new position: 22
+CH: Ignore
+starting at 22, rolled a 5
+tentative new position: 27
+starting at 27, rolled a 5
+tentative new position: 32
+starting at 32, rolled a 6
+tentative new position: 38
+starting at 38, rolled a 8
+tentative new position: 6
+starting at 6, rolled a 4
+tentative new position: 10
+starting at 10, rolled a 5
+tentative new position: 15
+starting at 15, rolled a 4
+tentative new position: 19
+starting at 19, rolled a 8
+tentative new position: 27
+starting at 27, rolled a 8
+tentative new position: 35
+starting at 35, rolled a 7
+tentative new position: 2
+CC: Ignore
+starting at 2, rolled a 8
+tentative new position: 10
+starting at 10, rolled a 11
+tentative new position: 21
+starting at 21, rolled a 5
+tentative new position: 26
+starting at 26, rolled a 6
+tentative new position: 32
+starting at 32, rolled a 6
+tentative new position: 38
+starting at 38, rolled a 7
+tentative new position: 5
+starting at 5, rolled a 6
+tentative new position: 11
+starting at 11, rolled a 4
+tentative new position: 15
+starting at 15, rolled a 7
+tentative new position: 22
+CH: Goto(5)
+starting at 5, rolled a 5
+tentative new position: 10
+starting at 10, rolled a 10
+tentative new position: 20
+starting at 20, rolled a 10
+tentative new position: 30
+starting at 11, rolled a 4
+tentative new position: 15
+starting at 15, rolled a 4
+tentative new position: 19
+starting at 19, rolled a 4
+tentative new position: 23
+starting at 23, rolled a 11
+tentative new position: 34
+starting at 34, rolled a 6
+tentative new position: 0
+starting at 0, rolled a 7
+tentative new position: 7
+CH: Ignore
+starting at 7, rolled a 11
+tentative new position: 18
+starting at 18, rolled a 6
+tentative new position: 24
+starting at 24, rolled a 6
+tentative new position: 30
+starting at 11, rolled a 8
+tentative new position: 19
+starting at 19, rolled a 7
+tentative new position: 26
+starting at 26, rolled a 5
+tentative new position: 31
+starting at 31, rolled a 7
+tentative new position: 38
+starting at 38, rolled a 8
+tentative new position: 6
+starting at 6, rolled a 9
+tentative new position: 15
+starting at 15, rolled a 10
+tentative new position: 25
+starting at 25, rolled a 10
+tentative new position: 35
+starting at 35, rolled a 9
+tentative new position: 4
+starting at 4, rolled a 9
+tentative new position: 13
+starting at 13, rolled a 2
+tentative new position: 15
+starting at 15, rolled a 8
+tentative new position: 23
+starting at 23, rolled a 7
+tentative new position: 30
+starting at 11, rolled a 5
+tentative new position: 16
+starting at 16, rolled a 5
+tentative new position: 21
+starting at 21, rolled a 5
+tentative new position: 26
+starting at 26, rolled a 8
+tentative new position: 34
+starting at 34, rolled a 10
+tentative new position: 4
+starting at 4, rolled a 8
+tentative new position: 12
+starting at 12, rolled a 5
+tentative new position: 17
+CC: Ignore
+starting at 17, rolled a 7
+tentative new position: 24
+starting at 24, rolled a 9
+tentative new position: 33
+CC: Ignore
+starting at 33, rolled a 10
+tentative new position: 3
+starting at 3, rolled a 3
+tentative new position: 6
+starting at 6, rolled a 2
+tentative new position: 8
+starting at 8, rolled a 7
+tentative new position: 15
+starting at 15, rolled a 7
+tentative new position: 22
+CH: GotoNextR
+starting at 25, rolled a 5
+tentative new position: 30
+starting at 11, rolled a 4
+tentative new position: 15
+starting at 15, rolled a 8
+tentative new position: 23
+starting at 23, rolled a 7
+tentative new position: 30
+starting at 11, rolled a 10
+tentative new position: 21
+starting at 21, rolled a 2
+tentative new position: 23
+starting at 23, rolled a 9
+tentative new position: 32
+starting at 32, rolled a 5
+tentative new position: 37
+starting at 37, rolled a 3
+tentative new position: 0
+starting at 0, rolled a 3
+tentative new position: 3
+starting at 3, rolled a 5
+tentative new position: 8
+starting at 8, rolled a 6
+tentative new position: 14
+starting at 14, rolled a 10
+tentative new position: 24
+starting at 24, rolled a 10
+tentative new position: 34
+starting at 34, rolled a 12
+tentative new position: 6
+starting at 6, rolled a 6
+tentative new position: 12
+starting at 12, rolled a 7
+tentative new position: 19
+starting at 19, rolled a 9
+tentative new position: 28
+starting at 28, rolled a 8
+tentative new position: 36
+CH: Goto(11)
+starting at 11, rolled a 5
+tentative new position: 16
+starting at 16, rolled a 8
+tentative new position: 24
+starting at 24, rolled a 3
+tentative new position: 27
+starting at 27, rolled a 6
+tentative new position: 33
+CC: Ignore
+starting at 33, rolled a 10
+tentative new position: 3
+starting at 3, rolled a 3
+tentative new position: 6
+starting at 6, rolled a 9
+tentative new position: 15
+starting at 15, rolled a 7
+tentative new position: 22
+CH: Goto(24)
+starting at 24, rolled a 9
+tentative new position: 33
+CC: Ignore
+starting at 33, rolled a 8
+tentative new position: 1
+starting at 1, rolled a 10
+tentative new position: 11
+starting at 11, rolled a 7
+tentative new position: 18
+starting at 18, rolled a 11
+tentative new position: 29
+starting at 29, rolled a 6
+tentative new position: 35
+starting at 35, rolled a 8
+tentative new position: 3
+starting at 3, rolled a 10
+tentative new position: 13
+starting at 13, rolled a 9
+tentative new position: 22
+CH: Ignore
+starting at 22, rolled a 9
+tentative new position: 31
+starting at 31, rolled a 7
+tentative new position: 38
+starting at 38, rolled a 7
+tentative new position: 5
+starting at 5, rolled a 5
+tentative new position: 10
+starting at 10, rolled a 8
+tentative new position: 18
+starting at 18, rolled a 10
+tentative new position: 28
+starting at 28, rolled a 4
+tentative new position: 32
+starting at 32, rolled a 10
+tentative new position: 2
+CC: Goto(0)
+starting at 0, rolled a 8
+tentative new position: 8
+starting at 8, rolled a 4
+tentative new position: 12
+starting at 12, rolled a 4
+tentative new position: 16
+starting at 16, rolled a 5
+tentative new position: 21
+starting at 21, rolled a 7
+tentative new position: 28
+starting at 28, rolled a 7
+tentative new position: 35
+starting at 35, rolled a 9
+tentative new position: 4
+starting at 4, rolled a 8
+tentative new position: 12
+starting at 12, rolled a 7
+tentative new position: 19
+starting at 19, rolled a 8
+tentative new position: 27
+starting at 27, rolled a 8
+tentative new position: 35
+starting at 35, rolled a 8
+tentative new position: 3
+starting at 3, rolled a 7
+tentative new position: 10
+starting at 10, rolled a 7
+tentative new position: 17
+CC: Ignore
+starting at 17, rolled a 6
+tentative new position: 23
+starting at 23, rolled a 8
+tentative new position: 31
+starting at 31, rolled a 3
+tentative new position: 34
+starting at 34, rolled a 7
+tentative new position: 1
+starting at 1, rolled a 9
+tentative new position: 10
+starting at 10, rolled a 6
+tentative new position: 16
+starting at 16, rolled a 7
+tentative new position: 23
+starting at 23, rolled a 8
+tentative new position: 31
+starting at 31, rolled a 6
+tentative new position: 37
+starting at 37, rolled a 3
+tentative new position: 0
+starting at 0, rolled a 6
+tentative new position: 6
+starting at 6, rolled a 2
+tentative new position: 8
+starting at 8, rolled a 6
+tentative new position: 14
+starting at 14, rolled a 4
+tentative new position: 18
+starting at 18, rolled a 5
+tentative new position: 23
+starting at 23, rolled a 5
+tentative new position: 28
+starting at 28, rolled a 8
+tentative new position: 36
+CH: Goto(39)
+starting at 39, rolled a 6
+tentative new position: 5
+starting at 5, rolled a 4
+tentative new position: 9
+starting at 9, rolled a 7
+tentative new position: 16
+starting at 16, rolled a 10
+tentative new position: 26
+starting at 26, rolled a 2
+tentative new position: 28
+starting at 28, rolled a 4
+tentative new position: 32
+starting at 32, rolled a 6
+tentative new position: 38
+starting at 38, rolled a 7
+tentative new position: 5
+starting at 5, rolled a 11
+tentative new position: 16
+starting at 16, rolled a 5
+tentative new position: 21
+starting at 21, rolled a 7
+tentative new position: 28
+starting at 28, rolled a 10
+tentative new position: 38
+starting at 38, rolled a 8
+tentative new position: 6
+starting at 6, rolled a 5
+tentative new position: 11
+starting at 11, rolled a 7
+tentative new position: 18
+starting at 18, rolled a 3
+tentative new position: 21
+starting at 21, rolled a 8
+tentative new position: 29
+starting at 29, rolled a 11
+tentative new position: 0
+starting at 0, rolled a 10
+tentative new position: 10
+starting at 10, rolled a 7
+tentative new position: 17
+CC: Ignore
+starting at 17, rolled a 9
+tentative new position: 26
+starting at 26, rolled a 5
+tentative new position: 31
+starting at 31, rolled a 7
+tentative new position: 38
+starting at 38, rolled a 8
+tentative new position: 6
+starting at 6, rolled a 2
+tentative new position: 8
+starting at 8, rolled a 6
+tentative new position: 14
+starting at 14, rolled a 6
+tentative new position: 20
+starting at 20, rolled a 4
+tentative new position: 24
+starting at 24, rolled a 10
+tentative new position: 34
+starting at 34, rolled a 7
+tentative new position: 1
+starting at 1, rolled a 7
+tentative new position: 8
+starting at 8, rolled a 10
+tentative new position: 18
+starting at 18, rolled a 4
+tentative new position: 22
+CH: GoBack3
+starting at 19, rolled a 4
+tentative new position: 23
+starting at 23, rolled a 9
+tentative new position: 32
+starting at 32, rolled a 4
+tentative new position: 36
+CH: Goto(0)
+starting at 0, rolled a 4
+tentative new position: 4
+starting at 4, rolled a 10
+tentative new position: 14
+starting at 14, rolled a 8
+tentative new position: 22
+CH: Ignore
+starting at 22, rolled a 12
+tentative new position: 34
+starting at 34, rolled a 5
+tentative new position: 39
+starting at 39, rolled a 4
+tentative new position: 3
+starting at 3, rolled a 3
+tentative new position: 6
+starting at 6, rolled a 6
+tentative new position: 12
+starting at 12, rolled a 3
+tentative new position: 15
+starting at 15, rolled a 7
+tentative new position: 22
+CH: Ignore
+starting at 22, rolled a 6
+tentative new position: 28
+starting at 28, rolled a 6
+tentative new position: 34
+starting at 34, rolled a 10
+tentative new position: 4
+starting at 4, rolled a 7
+tentative new position: 11
+starting at 11, rolled a 8
+tentative new position: 19
+starting at 19, rolled a 12
+tentative new position: 31
+starting at 31, rolled a 10
+tentative new position: 1
+starting at 1, rolled a 6
+tentative new position: 7
+CH: Ignore
+starting at 7, rolled a 10
+tentative new position: 17
+CC: Ignore
+starting at 17, rolled a 7
+tentative new position: 24
+starting at 24, rolled a 9
+tentative new position: 33
+CC: Ignore
+starting at 33, rolled a 11
+tentative new position: 4
+starting at 4, rolled a 5
+tentative new position: 9
+starting at 9, rolled a 7
+tentative new position: 16
+starting at 16, rolled a 5
+tentative new position: 21
+starting at 21, rolled a 9
+tentative new position: 30
+starting at 11, rolled a 11
+tentative new position: 22
+CH: GotoNextR
+starting at 25, rolled a 11
+tentative new position: 36
+CH: Ignore
+starting at 36, rolled a 11
+tentative new position: 7
+CH: Goto(11)
+starting at 11, rolled a 8
+tentative new position: 19
+starting at 19, rolled a 8
+tentative new position: 27
+starting at 27, rolled a 5
+tentative new position: 32
+starting at 32, rolled a 7
+tentative new position: 39
+starting at 39, rolled a 5
+tentative new position: 4
+starting at 4, rolled a 6
+tentative new position: 10
+starting at 10, rolled a 8
+tentative new position: 18
+starting at 18, rolled a 10
+tentative new position: 28
+starting at 28, rolled a 10
+tentative new position: 38
+starting at 38, rolled a 8
+tentative new position: 6
+starting at 6, rolled a 6
+tentative new position: 12
+starting at 12, rolled a 12
+tentative new position: 24
+starting at 24, rolled a 8
+tentative new position: 32
+starting at 32, rolled a 10
+tentative new position: 2
+CC: Ignore
+starting at 2, rolled a 9
+tentative new position: 11
+starting at 11, rolled a 11
+tentative new position: 22
+CH: Ignore
+starting at 22, rolled a 12
+tentative new position: 34
+starting at 34, rolled a 8
+tentative new position: 2
+CC: Goto(0)
+starting at 0, rolled a 7
+tentative new position: 7
+CH: GotoNextR
+starting at 15, rolled a 4
+tentative new position: 19
+starting at 19, rolled a 8
+tentative new position: 27
+starting at 27, rolled a 3
+tentative new position: 30
+starting at 11, rolled a 11
+tentative new position: 22
+CH: Goto(0)
+starting at 0, rolled a 5
+tentative new position: 5
+starting at 5, rolled a 7
+tentative new position: 12
+starting at 12, rolled a 5
+tentative new position: 17
+CC: Goto(11)
+starting at 11, rolled a 2
+tentative new position: 13
+starting at 13, rolled a 7
+tentative new position: 20
+starting at 20, rolled a 6
+tentative new position: 26
+starting at 26, rolled a 7
+tentative new position: 33
+CC: Ignore
+starting at 33, rolled a 4
+tentative new position: 37
+starting at 37, rolled a 10
+tentative new position: 7
+CH: Ignore
+starting at 7, rolled a 5
+tentative new position: 12
+starting at 12, rolled a 11
+tentative new position: 23
+starting at 23, rolled a 3
+tentative new position: 26
+starting at 26, rolled a 9
+tentative new position: 35
+starting at 35, rolled a 8
+tentative new position: 3
+starting at 3, rolled a 3
+tentative new position: 6
+starting at 6, rolled a 4
+tentative new position: 10
+starting at 10, rolled a 5
+tentative new position: 15
+starting at 15, rolled a 9
+tentative new position: 24
+starting at 24, rolled a 4
+tentative new position: 28
+starting at 28, rolled a 4
+tentative new position: 32
+starting at 32, rolled a 9
+tentative new position: 1
+starting at 1, rolled a 7
+tentative new position: 8
+starting at 8, rolled a 7
+tentative new position: 15
+starting at 15, rolled a 12
+tentative new position: 27
+starting at 27, rolled a 4
+tentative new position: 31
+starting at 31, rolled a 5
+tentative new position: 36
+CH: Ignore
+starting at 36, rolled a 10
+tentative new position: 6
+starting at 6, rolled a 7
+tentative new position: 13
+starting at 13, rolled a 7
+tentative new position: 20
+starting at 20, rolled a 10
+tentative new position: 30
+starting at 11, rolled a 12
+tentative new position: 23
+starting at 23, rolled a 5
+tentative new position: 28
+starting at 28, rolled a 8
+tentative new position: 36
+CH: Goto(11)
+starting at 11, rolled a 2
+tentative new position: 13
+starting at 13, rolled a 10
+tentative new position: 23
+starting at 23, rolled a 11
+tentative new position: 34
+starting at 34, rolled a 12
+tentative new position: 6
+starting at 6, rolled a 3
+tentative new position: 9
+starting at 9, rolled a 11
+tentative new position: 20
+starting at 20, rolled a 4
+tentative new position: 24
+starting at 24, rolled a 7
+tentative new position: 31
+starting at 31, rolled a 8
+tentative new position: 39
+starting at 39, rolled a 7
+tentative new position: 6
+starting at 6, rolled a 10
+tentative new position: 16
+starting at 16, rolled a 9
+tentative new position: 25
+starting at 25, rolled a 10
+tentative new position: 35
+starting at 35, rolled a 6
+tentative new position: 1
+starting at 1, rolled a 4
+tentative new position: 5
+starting at 5, rolled a 4
+tentative new position: 9
+starting at 9, rolled a 5
+tentative new position: 14
+starting at 14, rolled a 7
+tentative new position: 21
+starting at 21, rolled a 8
+tentative new position: 29
+starting at 29, rolled a 4
+tentative new position: 33
+CC: Ignore
+starting at 33, rolled a 8
+tentative new position: 1
+starting at 1, rolled a 9
+tentative new position: 10
+starting at 10, rolled a 8
+tentative new position: 18
+starting at 18, rolled a 6
+tentative new position: 24
+starting at 24, rolled a 8
+tentative new position: 32
+starting at 32, rolled a 6
+tentative new position: 38
+starting at 38, rolled a 8
+tentative new position: 6
+starting at 6, rolled a 8
+tentative new position: 14
+starting at 14, rolled a 2
+tentative new position: 16
+starting at 16, rolled a 6
+tentative new position: 22
+CH: GoBack3
+starting at 19, rolled a 4
+tentative new position: 23
+starting at 23, rolled a 7
+tentative new position: 30
+starting at 11, rolled a 9
+tentative new position: 20
+starting at 20, rolled a 6
+tentative new position: 26
+starting at 26, rolled a 5
+tentative new position: 31
+starting at 31, rolled a 9
+tentative new position: 0
+starting at 0, rolled a 6
+tentative new position: 6
+starting at 6, rolled a 10
+tentative new position: 16
+starting at 16, rolled a 5
+tentative new position: 21
+starting at 21, rolled a 10
+tentative new position: 31
+starting at 31, rolled a 9
+tentative new position: 0
+starting at 0, rolled a 7
+tentative new position: 7
+CH: Goto(39)
+starting at 39, rolled a 7
+tentative new position: 6
+starting at 6, rolled a 6
+tentative new position: 12
+starting at 12, rolled a 7
+tentative new position: 19
+starting at 19, rolled a 3
+tentative new position: 22
+CH: Goto(24)
+starting at 24, rolled a 2
+tentative new position: 26
+starting at 26, rolled a 8
+tentative new position: 34
+starting at 34, rolled a 8
+tentative new position: 2
+CC: Ignore
+starting at 2, rolled a 7
+tentative new position: 9
+starting at 9, rolled a 11
+tentative new position: 20
+starting at 20, rolled a 4
+tentative new position: 24
+starting at 24, rolled a 5
+tentative new position: 29
+starting at 29, rolled a 5
+tentative new position: 34
+starting at 34, rolled a 3
+tentative new position: 37
+starting at 37, rolled a 8
+tentative new position: 5
+starting at 5, rolled a 9
+tentative new position: 14
+starting at 14, rolled a 8
+tentative new position: 22
+CH: Ignore
+starting at 22, rolled a 8
+tentative new position: 30
+starting at 11, rolled a 5
+tentative new position: 16
+starting at 16, rolled a 8
+tentative new position: 24
+starting at 24, rolled a 3
+tentative new position: 27
+starting at 27, rolled a 4
+tentative new position: 31
+starting at 31, rolled a 8
+tentative new position: 39
+starting at 39, rolled a 8
+tentative new position: 7
+CH: Goto(5)
+starting at 5, rolled a 2
+tentative new position: 7
+CH: Ignore
+starting at 7, rolled a 9
+tentative new position: 16
+starting at 16, rolled a 4
+tentative new position: 20
+starting at 20, rolled a 3
+tentative new position: 23
+starting at 23, rolled a 7
+tentative new position: 30
+starting at 11, rolled a 9
+tentative new position: 20
+starting at 20, rolled a 10
+tentative new position: 30
+starting at 11, rolled a 4
+tentative new position: 15
+starting at 15, rolled a 8
+tentative new position: 23
+starting at 23, rolled a 8
+tentative new position: 31
+starting at 31, rolled a 8
+tentative new position: 39
+starting at 39, rolled a 4
+tentative new position: 3
+starting at 3, rolled a 9
+tentative new position: 12
+starting at 12, rolled a 7
+tentative new position: 19
+starting at 19, rolled a 7
+tentative new position: 26
+starting at 26, rolled a 10
+tentative new position: 36
+CH: GotoNextU
+starting at 12, rolled a 6
+tentative new position: 18
+starting at 18, rolled a 8
+tentative new position: 26
+starting at 26, rolled a 9
+tentative new position: 35
+starting at 35, rolled a 6
+tentative new position: 1
+starting at 1, rolled a 8
+tentative new position: 9
+starting at 9, rolled a 11
+tentative new position: 20
+starting at 20, rolled a 10
+tentative new position: 30
+starting at 11, rolled a 7
+tentative new position: 18
+starting at 18, rolled a 4
+tentative new position: 22
+CH: GotoNextR
+starting at 25, rolled a 5
+tentative new position: 30
+starting at 11, rolled a 6
+tentative new position: 17
+CC: Ignore
+starting at 17, rolled a 11
+tentative new position: 28
+starting at 28, rolled a 9
+tentative new position: 37
+starting at 37, rolled a 5
+tentative new position: 2
+CC: Ignore
+starting at 2, rolled a 4
+tentative new position: 6
+starting at 6, rolled a 7
+tentative new position: 13
+starting at 13, rolled a 5
+tentative new position: 18
+starting at 18, rolled a 6
+tentative new position: 24
+starting at 24, rolled a 7
+tentative new position: 31
+starting at 31, rolled a 8
+tentative new position: 39
+starting at 39, rolled a 7
+tentative new position: 6
+starting at 6, rolled a 10
+tentative new position: 16
+starting at 16, rolled a 7
+tentative new position: 23
+starting at 23, rolled a 11
+tentative new position: 34
+starting at 34, rolled a 9
+tentative new position: 3
+starting at 3, rolled a 10
+tentative new position: 13
+starting at 13, rolled a 8
+tentative new position: 21
+starting at 21, rolled a 3
+tentative new position: 24
+starting at 24, rolled a 8
+tentative new position: 32
+starting at 32, rolled a 12
+tentative new position: 4
+starting at 4, rolled a 6
+tentative new position: 10
+starting at 10, rolled a 9
+tentative new position: 19
+starting at 19, rolled a 3
+tentative new position: 22
+CH: Goto(39)
+starting at 39, rolled a 7
+tentative new position: 6
+starting at 6, rolled a 5
+tentative new position: 11
+starting at 11, rolled a 5
+tentative new position: 16
+starting at 16, rolled a 6
+tentative new position: 22
+CH: GotoNextU
+starting at 28, rolled a 4
+tentative new position: 32
+starting at 32, rolled a 8
+tentative new position: 0
+starting at 0, rolled a 3
+tentative new position: 3
+starting at 3, rolled a 3
+tentative new position: 6
+starting at 6, rolled a 5
+tentative new position: 11
+starting at 11, rolled a 10
+tentative new position: 21
+starting at 21, rolled a 10
+tentative new position: 31
+starting at 31, rolled a 6
+tentative new position: 37
+starting at 37, rolled a 11
+tentative new position: 8
+starting at 8, rolled a 7
+tentative new position: 15
+starting at 15, rolled a 7
+tentative new position: 22
+CH: Ignore
+starting at 22, rolled a 11
+tentative new position: 33
+CC: Ignore
+starting at 33, rolled a 6
+tentative new position: 39
+starting at 39, rolled a 7
+tentative new position: 6
+starting at 6, rolled a 8
+tentative new position: 14
+starting at 14, rolled a 10
+tentative new position: 24
+starting at 24, rolled a 3
+tentative new position: 27
+starting at 27, rolled a 9
+tentative new position: 36
+CH: GotoNextR
+starting at 5, rolled a 10
+tentative new position: 15
+starting at 15, rolled a 4
+tentative new position: 19
+starting at 19, rolled a 6
+tentative new position: 25
+starting at 25, rolled a 10
+tentative new position: 35
+starting at 35, rolled a 6
+tentative new position: 1
+starting at 1, rolled a 9
+tentative new position: 10
+starting at 10, rolled a 9
+tentative new position: 19
+starting at 19, rolled a 5
+tentative new position: 24
+starting at 24, rolled a 3
+tentative new position: 27
+starting at 27, rolled a 4
+tentative new position: 31
+starting at 31, rolled a 6
+tentative new position: 37
+starting at 37, rolled a 8
+tentative new position: 5
+starting at 5, rolled a 8
+tentative new position: 13
+starting at 13, rolled a 8
+tentative new position: 21
+starting at 21, rolled a 9
+tentative new position: 30
+starting at 11, rolled a 6
+tentative new position: 17
+CC: Ignore
+starting at 17, rolled a 2
+tentative new position: 19
+starting at 19, rolled a 9
+tentative new position: 28
+starting at 28, rolled a 5
+tentative new position: 33
+CC: Ignore
+starting at 33, rolled a 5
+tentative new position: 38
+starting at 38, rolled a 8
+tentative new position: 6
+starting at 6, rolled a 8
+tentative new position: 14
+starting at 14, rolled a 6
+tentative new position: 20
+starting at 20, rolled a 5
+tentative new position: 25
+starting at 25, rolled a 4
+tentative new position: 29
+starting at 29, rolled a 7
+tentative new position: 36
+CH: Goto(5)
+starting at 5, rolled a 7
+tentative new position: 12
+starting at 12, rolled a 2
+tentative new position: 14
+starting at 14, rolled a 7
+tentative new position: 21
+starting at 21, rolled a 5
+tentative new position: 26
+starting at 26, rolled a 5
+tentative new position: 31
+starting at 31, rolled a 6
+tentative new position: 37
+starting at 37, rolled a 3
+tentative new position: 0
+starting at 0, rolled a 5
+tentative new position: 5
+starting at 5, rolled a 10
+tentative new position: 15
+starting at 15, rolled a 10
+tentative new position: 25
+starting at 25, rolled a 4
+tentative new position: 29
+starting at 29, rolled a 4
+tentative new position: 33
+CC: Ignore
+starting at 33, rolled a 7
+tentative new position: 0
+starting at 0, rolled a 8
+tentative new position: 8
+starting at 8, rolled a 9
+tentative new position: 17
+CC: Ignore
+starting at 17, rolled a 5
+tentative new position: 22
+CH: GotoNextR
+starting at 25, rolled a 4
+tentative new position: 29
+starting at 29, rolled a 4
+tentative new position: 33
+CC: Ignore
+starting at 33, rolled a 5
+tentative new position: 38
+starting at 38, rolled a 9
+tentative new position: 7
+CH: Goto(0)
+starting at 0, rolled a 9
+tentative new position: 9
+starting at 9, rolled a 6
+tentative new position: 15
+starting at 15, rolled a 6
+tentative new position: 21
+starting at 21, rolled a 10
+tentative new position: 31
+starting at 31, rolled a 9
+tentative new position: 0
+starting at 0, rolled a 7
+tentative new position: 7
+CH: Ignore
+starting at 7, rolled a 4
+tentative new position: 11
+starting at 11, rolled a 5
+tentative new position: 16
+starting at 16, rolled a 4
+tentative new position: 20
+starting at 20, rolled a 12
+tentative new position: 32
+starting at 32, rolled a 4
+tentative new position: 36
+CH: GoBack3
+starting at 33, rolled a 9
+tentative new position: 2
+CC: Ignore
+starting at 2, rolled a 10
+tentative new position: 12
+starting at 12, rolled a 8
+tentative new position: 20
+starting at 20, rolled a 10
+tentative new position: 30
+starting at 11, rolled a 6
+tentative new position: 17
+CC: Ignore
+starting at 17, rolled a 7
+tentative new position: 24
+starting at 24, rolled a 7
+tentative new position: 31
+starting at 31, rolled a 6
+tentative new position: 37
+starting at 37, rolled a 3
+tentative new position: 0
+starting at 0, rolled a 4
+tentative new position: 4
+starting at 4, rolled a 7
+tentative new position: 11
+starting at 11, rolled a 12
+tentative new position: 23
+starting at 23, rolled a 10
+tentative new position: 33
+CC: Ignore
+starting at 33, rolled a 3
+tentative new position: 36
+CH: Goto(24)
+starting at 24, rolled a 10
+tentative new position: 34
+starting at 34, rolled a 4
+tentative new position: 38
+starting at 38, rolled a 3
+tentative new position: 1
+starting at 1, rolled a 5
+tentative new position: 6
+starting at 6, rolled a 5
+tentative new position: 11
+starting at 11, rolled a 4
+tentative new position: 15
+starting at 15, rolled a 4
+tentative new position: 19
+starting at 19, rolled a 5
+tentative new position: 24
+starting at 24, rolled a 7
+tentative new position: 31
+starting at 31, rolled a 11
+tentative new position: 2
+CC: Ignore
+starting at 2, rolled a 8
+tentative new position: 10
+starting at 10, rolled a 4
+tentative new position: 14
+starting at 14, rolled a 6
+tentative new position: 20
+starting at 20, rolled a 10
+tentative new position: 30
+starting at 11, rolled a 7
+tentative new position: 18
+starting at 18, rolled a 3
+tentative new position: 21
+starting at 21, rolled a 7
+tentative new position: 28
+starting at 28, rolled a 7
+tentative new position: 35
+starting at 35, rolled a 7
+tentative new position: 2
+CC: Ignore
+starting at 2, rolled a 7
+tentative new position: 9
+starting at 9, rolled a 5
+tentative new position: 14
+starting at 14, rolled a 9
+tentative new position: 23
+starting at 23, rolled a 5
+tentative new position: 28
+starting at 28, rolled a 9
+tentative new position: 37
+starting at 37, rolled a 7
+tentative new position: 4
+starting at 4, rolled a 4
+tentative new position: 8
+starting at 8, rolled a 10
+tentative new position: 18
+starting at 18, rolled a 9
+tentative new position: 27
+starting at 27, rolled a 11
+tentative new position: 38
+starting at 38, rolled a 12
+tentative new position: 10
+starting at 10, rolled a 9
+tentative new position: 19
+starting at 19, rolled a 6
+tentative new position: 25
+starting at 25, rolled a 3
+tentative new position: 28
+starting at 28, rolled a 7
+tentative new position: 35
+starting at 35, rolled a 10
+tentative new position: 5
+starting at 5, rolled a 6
+tentative new position: 11
+starting at 11, rolled a 6
+tentative new position: 17
+CC: Ignore
+starting at 17, rolled a 7
+tentative new position: 24
+starting at 24, rolled a 11
+tentative new position: 35
+starting at 35, rolled a 7
+tentative new position: 2
+CC: Ignore
+starting at 2, rolled a 4
+tentative new position: 6
+starting at 6, rolled a 8
+tentative new position: 14
+starting at 14, rolled a 7
+tentative new position: 21
+starting at 21, rolled a 12
+tentative new position: 33
+CC: Ignore
+starting at 33, rolled a 2
+tentative new position: 35
+starting at 35, rolled a 6
+tentative new position: 1
+starting at 1, rolled a 12
+tentative new position: 13
+starting at 13, rolled a 9
+tentative new position: 22
+CH: Ignore
+starting at 22, rolled a 8
+tentative new position: 30
+starting at 11, rolled a 7
+tentative new position: 18
+starting at 18, rolled a 4
+tentative new position: 22
+CH: Goto(11)
+starting at 11, rolled a 9
+tentative new position: 20
+starting at 20, rolled a 8
+tentative new position: 28
+starting at 28, rolled a 4
+tentative new position: 32
+starting at 32, rolled a 7
+tentative new position: 39
+starting at 39, rolled a 7
+tentative new position: 6
+starting at 6, rolled a 8
+tentative new position: 14
+starting at 14, rolled a 5
+tentative new position: 19
+starting at 19, rolled a 11
+tentative new position: 30
+starting at 11, rolled a 12
+tentative new position: 23
+starting at 23, rolled a 9
+tentative new position: 32
+starting at 32, rolled a 3
+tentative new position: 35
+starting at 35, rolled a 8
+tentative new position: 3
+starting at 3, rolled a 7
+tentative new position: 10
+starting at 10, rolled a 9
+tentative new position: 19
+starting at 19, rolled a 8
+tentative new position: 27
+starting at 27, rolled a 8
+tentative new position: 35
+starting at 35, rolled a 11
+tentative new position: 6
+starting at 6, rolled a 6
+tentative new position: 12
+starting at 12, rolled a 9
+tentative new position: 21
+starting at 21, rolled a 7
+tentative new position: 28
+starting at 28, rolled a 9
+tentative new position: 37
+starting at 37, rolled a 8
+tentative new position: 5
+starting at 5, rolled a 8
+tentative new position: 13
+starting at 13, rolled a 11
+tentative new position: 24
+starting at 24, rolled a 8
+tentative new position: 32
+starting at 32, rolled a 6
+tentative new position: 38
+starting at 38, rolled a 12
+tentative new position: 10
+starting at 10, rolled a 10
+tentative new position: 20
+starting at 20, rolled a 8
+tentative new position: 28
+starting at 28, rolled a 2
+tentative new position: 30
+starting at 11, rolled a 7
+tentative new position: 18
+starting at 18, rolled a 10
+tentative new position: 28
+starting at 28, rolled a 11
+tentative new position: 39
+starting at 39, rolled a 8
+tentative new position: 7
+CH: Ignore
+starting at 7, rolled a 6
+tentative new position: 13
+starting at 13, rolled a 4
+tentative new position: 17
+CC: Ignore
+starting at 17, rolled a 8
+tentative new position: 25
+starting at 25, rolled a 6
+tentative new position: 31
+starting at 31, rolled a 9
+tentative new position: 0
+starting at 0, rolled a 6
+tentative new position: 6
+starting at 6, rolled a 11
+tentative new position: 17
+CC: Ignore
+starting at 17, rolled a 6
+tentative new position: 23
+starting at 23, rolled a 4
+tentative new position: 27
+starting at 27, rolled a 10
+tentative new position: 37
+starting at 37, rolled a 2
+tentative new position: 39
+starting at 39, rolled a 6
+tentative new position: 5
+starting at 5, rolled a 3
+tentative new position: 8
+starting at 8, rolled a 5
+tentative new position: 13
+starting at 13, rolled a 8
+tentative new position: 21
+starting at 21, rolled a 2
+tentative new position: 23
+starting at 23, rolled a 9
+tentative new position: 32
+starting at 32, rolled a 12
+tentative new position: 4
+starting at 4, rolled a 6
+tentative new position: 10
+starting at 10, rolled a 7
+tentative new position: 17
+CC: Ignore
+starting at 17, rolled a 7
+tentative new position: 24
+starting at 24, rolled a 7
+tentative new position: 31
+starting at 31, rolled a 7
+tentative new position: 38
+starting at 38, rolled a 3
+tentative new position: 1
+starting at 1, rolled a 6
+tentative new position: 7
+CH: Ignore
+starting at 7, rolled a 4
+tentative new position: 11
+starting at 11, rolled a 7
+tentative new position: 18
+starting at 18, rolled a 10
+tentative new position: 28
+starting at 28, rolled a 3
+tentative new position: 31
+starting at 31, rolled a 6
+tentative new position: 37
+starting at 37, rolled a 5
+tentative new position: 2
+CC: Goto(11)
+starting at 11, rolled a 8
+tentative new position: 19
+starting at 19, rolled a 6
+tentative new position: 25
+starting at 25, rolled a 6
+tentative new position: 31
+starting at 31, rolled a 6
+tentative new position: 37
+starting at 37, rolled a 7
+tentative new position: 4
+starting at 4, rolled a 9
+tentative new position: 13
+starting at 13, rolled a 6
+tentative new position: 19
+starting at 19, rolled a 4
+tentative new position: 23
+starting at 23, rolled a 7
+tentative new position: 30
+starting at 11, rolled a 5
+tentative new position: 16
+starting at 16, rolled a 7
+tentative new position: 23
+starting at 23, rolled a 9
+tentative new position: 32
+starting at 32, rolled a 5
+tentative new position: 37
+starting at 37, rolled a 11
+tentative new position: 8
+starting at 8, rolled a 8
+tentative new position: 16
+starting at 16, rolled a 5
+tentative new position: 21
+starting at 21, rolled a 9
+tentative new position: 30
+starting at 11, rolled a 5
+tentative new position: 16
+starting at 16, rolled a 4
+tentative new position: 20
+starting at 20, rolled a 11
+tentative new position: 31
+starting at 31, rolled a 7
+tentative new position: 38
+starting at 38, rolled a 9
+tentative new position: 7
+CH: Goto(11)
+starting at 11, rolled a 7
+tentative new position: 18
+starting at 18, rolled a 8
+tentative new position: 26
+starting at 26, rolled a 11
+tentative new position: 37
+starting at 37, rolled a 5
+tentative new position: 2
+CC: Goto(0)
+starting at 0, rolled a 6
+tentative new position: 6
+starting at 6, rolled a 7
+tentative new position: 13
+starting at 13, rolled a 4
+tentative new position: 17
+CC: Ignore
+starting at 17, rolled a 8
+tentative new position: 25
+starting at 25, rolled a 7
+tentative new position: 32
+starting at 32, rolled a 7
+tentative new position: 39
+starting at 39, rolled a 7
+tentative new position: 6
+starting at 6, rolled a 3
+tentative new position: 9
+starting at 9, rolled a 8
+tentative new position: 17
+CC: Ignore
+starting at 17, rolled a 6
+tentative new position: 23
+starting at 23, rolled a 7
+tentative new position: 30
+starting at 11, rolled a 4
+tentative new position: 15
+starting at 15, rolled a 6
+tentative new position: 21
+starting at 21, rolled a 9
+tentative new position: 30
+starting at 11, rolled a 8
+tentative new position: 19
+starting at 19, rolled a 9
+tentative new position: 28
+starting at 28, rolled a 8
+tentative new position: 36
+CH: Ignore
+starting at 36, rolled a 10
+tentative new position: 6
+starting at 6, rolled a 12
+tentative new position: 18
+starting at 18, rolled a 11
+tentative new position: 29
+starting at 29, rolled a 5
+tentative new position: 34
+starting at 34, rolled a 9
+tentative new position: 3
+starting at 3, rolled a 7
+tentative new position: 10
+starting at 10, rolled a 9
+tentative new position: 19
+starting at 19, rolled a 4
+tentative new position: 23
+starting at 23, rolled a 8
+tentative new position: 31
+starting at 31, rolled a 8
+tentative new position: 39
+starting at 39, rolled a 9
+tentative new position: 8
+starting at 8, rolled a 10
+tentative new position: 18
+starting at 18, rolled a 6
+tentative new position: 24
+starting at 24, rolled a 4
+tentative new position: 28
+starting at 28, rolled a 8
+tentative new position: 36
+CH: Goto(39)
+starting at 39, rolled a 6
+tentative new position: 5
+starting at 5, rolled a 2
+tentative new position: 7
+CH: Goto(11)
+starting at 11, rolled a 9
+tentative new position: 20
+starting at 20, rolled a 9
+tentative new position: 29
+starting at 29, rolled a 10
+tentative new position: 39
+starting at 39, rolled a 8
+tentative new position: 7
+CH: GotoNextR
+starting at 15, rolled a 7
+tentative new position: 22
+CH: Goto(24)
+starting at 24, rolled a 11
+tentative new position: 35
+starting at 35, rolled a 9
+tentative new position: 4
+starting at 4, rolled a 6
+tentative new position: 10
+starting at 10, rolled a 7
+tentative new position: 17
+CC: Ignore
+starting at 17, rolled a 4
+tentative new position: 21
+starting at 21, rolled a 8
+tentative new position: 29
+starting at 29, rolled a 4
+tentative new position: 33
+CC: Ignore
+starting at 33, rolled a 8
+tentative new position: 1
+starting at 1, rolled a 7
+tentative new position: 8
+starting at 8, rolled a 9
+tentative new position: 17
+CC: Ignore
+starting at 17, rolled a 6
+tentative new position: 23
+starting at 23, rolled a 8
+tentative new position: 31
+starting at 31, rolled a 2
+tentative new position: 33
+CC: Ignore
+starting at 33, rolled a 9
+tentative new position: 2
+CC: Ignore
+starting at 2, rolled a 10
+tentative new position: 12
+starting at 12, rolled a 2
+tentative new position: 14
+starting at 14, rolled a 6
+tentative new position: 20
+starting at 20, rolled a 8
+tentative new position: 28
+starting at 28, rolled a 7
+tentative new position: 35
+starting at 35, rolled a 7
+tentative new position: 2
+CC: Goto(11)
+starting at 11, rolled a 10
+tentative new position: 21
+starting at 21, rolled a 8
+tentative new position: 29
+starting at 29, rolled a 5
+tentative new position: 34
+starting at 34, rolled a 8
+tentative new position: 2
+CC: Ignore
+starting at 2, rolled a 7
+tentative new position: 9
+starting at 9, rolled a 2
+tentative new position: 11
+starting at 11, rolled a 7
+tentative new position: 18
+starting at 18, rolled a 11
+tentative new position: 29
+starting at 29, rolled a 6
+tentative new position: 35
+starting at 35, rolled a 12
+tentative new position: 7
+CH: GotoNextR
+starting at 15, rolled a 3
+tentative new position: 18
+starting at 18, rolled a 5
+tentative new position: 23
+starting at 23, rolled a 6
+tentative new position: 29
+starting at 29, rolled a 4
+tentative new position: 33
+CC: Goto(0)
+starting at 0, rolled a 9
+tentative new position: 9
+starting at 9, rolled a 7
+tentative new position: 16
+starting at 16, rolled a 12
+tentative new position: 28
+starting at 28, rolled a 5
+tentative new position: 33
+CC: Ignore
+starting at 33, rolled a 10
+tentative new position: 3
+starting at 3, rolled a 3
+tentative new position: 6
+starting at 6, rolled a 7
+tentative new position: 13
+starting at 13, rolled a 9
+tentative new position: 22
+CH: Ignore
+starting at 22, rolled a 10
+tentative new position: 32
+starting at 32, rolled a 11
+tentative new position: 3
+starting at 3, rolled a 9
+tentative new position: 12
+starting at 12, rolled a 11
+tentative new position: 23
+starting at 23, rolled a 3
+tentative new position: 26
+starting at 26, rolled a 9
+tentative new position: 35
+starting at 35, rolled a 8
+tentative new position: 3
+starting at 3, rolled a 10
+tentative new position: 13
+starting at 13, rolled a 6
+tentative new position: 19
+starting at 19, rolled a 10
+tentative new position: 29
+starting at 29, rolled a 3
+tentative new position: 32
+starting at 32, rolled a 9
+tentative new position: 1
+starting at 1, rolled a 9
+tentative new position: 10
+starting at 10, rolled a 4
+tentative new position: 14
+starting at 14, rolled a 12
+tentative new position: 26
+starting at 26, rolled a 5
+tentative new position: 31
+starting at 31, rolled a 7
+tentative new position: 38
+starting at 38, rolled a 10
+tentative new position: 8
+starting at 8, rolled a 9
+tentative new position: 17
+CC: Ignore
+starting at 17, rolled a 6
+tentative new position: 23
+starting at 23, rolled a 7
+tentative new position: 30
+starting at 11, rolled a 8
+tentative new position: 19
+starting at 19, rolled a 6
+tentative new position: 25
+starting at 25, rolled a 4
+tentative new position: 29
+starting at 29, rolled a 7
+tentative new position: 36
+CH: Goto(0)
+starting at 0, rolled a 3
+tentative new position: 3
+starting at 3, rolled a 6
+tentative new position: 9
+starting at 9, rolled a 4
+tentative new position: 13
+starting at 13, rolled a 8
+tentative new position: 21
+starting at 21, rolled a 2
+tentative new position: 23
+starting at 23, rolled a 5
+tentative new position: 28
+starting at 28, rolled a 5
+tentative new position: 33
+CC: Ignore
+starting at 33, rolled a 5
+tentative new position: 38
+starting at 38, rolled a 2
+tentative new position: 0
+starting at 0, rolled a 5
+tentative new position: 5
+starting at 5, rolled a 9
+tentative new position: 14
+starting at 14, rolled a 5
+tentative new position: 19
+starting at 19, rolled a 8
+tentative new position: 27
+starting at 27, rolled a 10
+tentative new position: 37
+starting at 37, rolled a 6
+tentative new position: 3
+starting at 3, rolled a 6
+tentative new position: 9
+starting at 9, rolled a 7
+tentative new position: 16
+starting at 16, rolled a 10
+tentative new position: 26
+starting at 26, rolled a 8
+tentative new position: 34
+starting at 34, rolled a 5
+tentative new position: 39
+starting at 39, rolled a 6
+tentative new position: 5
+starting at 5, rolled a 7
+tentative new position: 12
+starting at 12, rolled a 7
+tentative new position: 19
+starting at 19, rolled a 4
+tentative new position: 23
+starting at 23, rolled a 5
+tentative new position: 28
+spaces ...
+0: 0.029
+1: 0.022
+2: 0.015
+3: 0.019
+4: 0.02
+5: 0.027
+6: 0.037
+7: 0.007
+8: 0.02
+9: 0.021
+10: 0.028
+11: 0.063
+12: 0.026
+13: 0.021
+14: 0.026
+15: 0.024
+16: 0.024
+17: 0.027
+18: 0.028
+19: 0.041
+20: 0.026
+21: 0.032
+22: 0.013
+23: 0.031
+24: 0.034
+25: 0.025
+26: 0.023
+27: 0.025
+28: 0.035
+29: 0.02
+30: 0
+31: 0.034
+32: 0.025
+33: 0.024
+34: 0.024
+35: 0.028
+36: 0.005
+37: 0.021
+38: 0.025
+39: 0.025
+rolls ...
+2: 0.028
+3: 0.054
+4: 0.096
+5: 0.098
+6: 0.123
+7: 0.166
+8: 0.148
+9: 0.109
+10: 0.095
+11: 0.056
+12: 0.027
