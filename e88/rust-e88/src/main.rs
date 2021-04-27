@@ -36,377 +36,146 @@ fn factor(n: u32) -> HashMap<u32, u8> {
     factors
 }
 
-fn product_equals_p(a: &Vec<i32>, n: i32) -> bool {
-    unimplemented!();
+struct RGS {
+    a: Vec<u8>,
+    b: Vec<u8>,
+    m: u8,
+    started: bool,
 }
 
-fn is_product_sum_old(n: i32, k: usize) -> Option<Vec<i32>> {
-    // Knuth "Algorithm H" from Fasicle 3b
-    let mut a = vec![1i32; k + 1];
-    a[0] = n as i32 - k as i32 + 1;
-    a[k] = -1;
-    let mut tries = 1u32;
-
-    loop {
-        println!("try {}", tries);
-        tries = tries + 1;
-        if product_equals_p(&a, n) {
-            return Some(a);
-        }
-        if a[1] < a[0] - 1 {
-            a[0] = a[0] - 1;
-            a[1] = a[1] + 1;
-            continue;
-        }
-        let mut j = 2;
-        let mut s = a[0] + a[1] - 1;
-        loop {
-            if a[j] < a[0] - 1 {
-                break;
-            }
-            s = s + a[j];
-            j = j + 1;
-        }
-        if j + 1 > k {
-            return None;
-        }
-        let x = a[j] + 1;
-        a[j] = x;
-        j = j - 1;
-        loop {
-            if j == 0 {
-                break;
-            }
-            a[j] = x;
-            s = s - x;
-            j = j - 1;
-        }
-        a[0] = s;
-    }
-}
-
-/**
-* Knuth's Algorithm P from Fascile 3b
-*/
-fn make_all_partitions(n: u8) -> Vec<Vec<u8>> {
-    let mut n_mut = n;
-    let mut v = Vec::new();
-    let mut a = vec![0u8];
-    let mut m = 1;
-    'p2: loop {
-        if m == a.len() {
-            a.push(0);
-        }
-        a[m] = n_mut;
-        let mut q = m;
-        if n_mut == 1 {
-            q -= 1;
-        }
-        'p3: loop {
-            v.push(a[1..(m + 1)].to_vec());
-            if a[q] == 2 {
-                a[q] = 1;
-                q -= 1;
-                m += 1;
-                if m == a.len() {
-                    a.push(0);
-                }
-                a[m] = 1;
-                continue 'p3;
-            }
-            if q == 0 {
-                break 'p2;
-            }
-            let mut x = a[q] - 1;
-            a[q] = x;
-            n_mut = (m - q + 1) as u8;
-            m = q + 1;
-            'p6: loop {
-                if n_mut <= x {
-                    continue 'p2;
-                } else {
-                    a[m] = x;
-                    m += 1;
-                    n_mut -= x;
-                }
-            }
+impl RGS {
+    fn new(size: usize) -> Self {
+        RGS {
+            a: vec![0u8; size],
+            b: vec![1u8; size - 1],
+            m: 1u8,
+            started: false,
         }
     }
-    v
-}
-
-fn _analyze_factors() {
-    let mut factors = HashMap::new();
-    for n in 2..12000 {
-        factors.insert(n, factor(n));
-    }
-    let mut max_primes = 0;
-    let mut max_n = 0;
-    let mut max_factors = 0;
-    
-    for (n, n_factors) in factors.iter() {
-        if n_factors.len() > max_primes {
-            max_primes = n_factors.len();
-        }
-        // if n_factors.len() == 5 {
-        //     println!("{} has 5 factors", n);
-        // }
-        let mut this_factors = 0;
-        for (p, p_n) in n_factors.iter() {
-            if *p_n > max_n {
-                max_n = *p_n;
-            }
-            // if *p_n == 14 {
-            //     println!("{} has a p_n == 14 ({})", n, p);
-            // }
-            this_factors += p_n;
-        }
-        println!("{} has {} total factors", n, this_factors);
-        if this_factors > max_factors {
-            max_factors = this_factors;
-        }
-
-    }
-    println!("max primes: {}", max_primes);
-    println!("max p_n: {}", max_n);
-    println!("max total factors: {}", max_factors);
-}
-
-struct PartitionEnumerate<'a> {
-    i: usize,
-    _p: &'a Vec<Vec<u8>>,
-}
-
-impl<'a> PartitionEnumerate<'a> {
-    fn new(p: &'a Vec<Vec<u8>>) -> Self {
-        PartitionEnumerate { i: 0, _p: p }
-    }
-}
-
-impl<'a> Iterator for PartitionEnumerate<'a> {
-    type Item = &'a Vec<u8>;
-
-    fn next(&mut self) -> Option<Self::Item> {
-        if self.i < self._p.len() {
-            let v = Some(&self._p[self.i]);
-            self.i += 1;
-            return v;
-        } else {
-            return None;
-        }
-    }
-}
-
-#[derive(Debug)]
-struct FactorConfiguration<'a> {
-    p: u32,
-    partition: &'a Vec<u8>,
-}
-
-impl<'a> FactorConfiguration<'a> {
-    fn sum(&self) -> u32 {
-        let mut sum = 0u32;
-        for power in self.partition {
-            sum += self.p.pow(*power as u32);
-        }
-        sum
-    }
-
-    fn num_factors(&self) -> u32 {
-        self.partition.len().try_into().unwrap()
-    }
-}
-
-#[derive(Debug)]
-struct Configuration<'a> {
-    config: Vec<FactorConfiguration<'a>>,
-}
-
-impl<'a> Configuration<'a> {
-    fn sum(&self, k: u32) -> u32 {
-        let mut sum = 0;
-        let mut num_factors = 0;
-
-        for fc in &self.config {
-            sum += fc.sum();
-            num_factors += fc.num_factors();
-        }
-
-        if num_factors < k {
-            sum += k - num_factors;
-        }
-        sum
-    }
-}
-
-#[derive(Debug)]
-struct ConfigurationEnumerate<'a> {
-    configs: Vec<(u32, &'a Vec<Vec<u8>>)>,
-    indexes: Vec<usize>,
-}
-
-impl<'a> ConfigurationEnumerate<'a> {
-    fn new(factors: &'a HashMap<u32, u8>, partitions: &'a HashMap<u8, Vec<Vec<u8>>>) -> Self {
-        let mut configs = Vec::new();
-        let mut indexes = Vec::new();
-        indexes.resize(factors.len(), 0 as usize);
-
-        for (factor, power) in factors {
-            //            println!("factor:{}, power:{}", factor, power);
-            configs.push((*factor, partitions.get(power).unwrap()));
-        }
-        ConfigurationEnumerate {
-            configs: configs,
-            indexes: indexes,
-        }
-    }
-}
-
-impl<'a> Iterator for ConfigurationEnumerate<'a> {
-    type Item = Configuration<'a>;
-
-    fn next(&mut self) -> Option<Self::Item> {
-        if self.indexes[0] == self.configs[0].1.len() {
-            return None;
-        }
-        assert_eq!(self.indexes.len(), self.configs.len());
-
-        let mut c = Vec::new();
-        for j in 0..self.indexes.len() {
-            c.push(FactorConfiguration {
-                p: self.configs[j].0,
-                partition: &self.configs[j].1[self.indexes[j]],
-            });
-        }
-
-        for i in (0..self.indexes.len()).rev() {
-            if self.indexes[i] < self.configs[i].1.len() - 1 {
-                self.indexes[i] += 1;
-                for j in i + 1..self.indexes.len() {
-                    self.indexes[j] = 0;
-                }
-                break;
-            } else if i == 0 {
-                self.indexes[i] += 1;
-            }
-        }
-        return Some(Configuration { config: c });
-    }
-}
-
-fn make_configuration_iterator<'a>(
-    factors: &'a HashMap<u32, u8>,
-    all_partitions: &'a HashMap<u8, Vec<Vec<u8>>>,
-) -> ConfigurationEnumerate<'a> {
-    ConfigurationEnumerate::new(factors, all_partitions)
-}
-
-fn is_product_sum2(
-    factors: &HashMap<u32, HashMap<u32, u8>>,
-    partitions: &HashMap<u8, Vec<Vec<u8>>>,
-    n: u32,
-    k: u32,
-) -> bool {
-    let n_factors = factors.get(&n).unwrap();
-
-    for config in make_configuration_iterator(n_factors, partitions) {
-        println!("testing {:?}", config);
-        if config.sum(k) == n {
-            return true;
-        }
-    }
-    false
-}
-
-fn main() {
-    _analyze_factors();
 
     /*
-    let mut partitions = HashMap::new();
-    for n in 1..15 {
-        let p = make_all_partitions(n);
-        println!("{} has {} partitions", n, p.len());
-        partitions.insert(n, p);
-    }
+     *  Why not make this a standard Iterator?  Because we want to return references to
+     *  a value that we're modifying at each iteration, which the Iterator trait
+     *  does not allow.  See
+     * https://stackoverflow.com/questions/25702909/can-i-write-an-iterator-that-mutates-itself-and-then-yields-a-reference-into-its
+     */
 
-    let mut factors = HashMap::new();
-    for n in 2..25000 {
-        factors.insert(n, factor(n));
-    }
+    fn next(&mut self) -> Option<&[u8]> {
+        if !self.started {
+            self.started = true;
+            return Some(&self.a);
+        }
 
+        let n = self.a.len();
+
+        if self.a[n - 1] != self.m {
+            self.a[n - 1] += 1;
+            return Some(&self.a);
+        }
+        let mut j = n - 1;
+        while self.a[j - 1] == self.b[j - 1] {
+            j -= 1;
+        }
+        if j == 1 {
+            return None;
+        }
+        self.a[j - 1] += 1;
+        self.m = self.b[j - 1] + if self.a[j - 1] == self.b[j - 1] { 1 } else { 0 };
+        j += 1;
+        while j < n {
+            self.a[j - 1] = 0;
+            self.b[j - 1] = self.m;
+            j += 1;
+        }
+        self.a[n - 1] = 0;
+        return Some(&self.a);
+    }
+}
+
+fn factors_to_list(factors: HashMap<u32, u8>) -> Vec<u32> {
+    let mut f = vec![];
+    for (&p, &p_n) in factors.iter() {
+        for n in 0..p_n {
+            f.push(p);
+        }
+    }
+    return f;
+}
+
+fn partition_count(p: &Vec<u8>) -> usize {
+    let mut c = 0;
+    for &v in p {
+        if v > c {
+            c = v;
+        }
+    }
+    return (c + 1).into();
+}
+
+fn partition_sum(factors: &Vec<u32>, partition: &Vec<u8>, count: usize) -> u32 {
+    let mut terms = vec![1u32; count];
+    // println!(
+    //     "count: {}, factors: {:?}, partition: {:?}",
+    //     count, factors, partition
+    // );
+    for p_i in 0..partition.len() {
+        terms[partition[p_i] as usize] *= factors[p_i];
+    }
+    //    println!("final terms: {:?}", terms);
+    return terms.iter().fold(0, |acc, &x| acc + x);
+}
+
+
+fn main() {
+    let mut partition_map = HashMap::new();
     let mut min_product_sums = HashSet::new();
 
-    'k: for k in 2..7 {
-        if k % 1000 == 0 {
-            println!("k:{}", k);
+    println!("pre-computing partitions");
+    for n in 2..14 {
+        let mut partitions = vec![];
+        let mut rgs = RGS::new(n);
+        while let Some(a) = rgs.next() {
+            partitions.push(a.to_vec());
         }
-        for n in k.. {
-            println!("testing n:{}, k:{}", n, k);
-            if is_product_sum2(&factors, &partitions, n, k) {
-                min_product_sums.insert(n);
-                continue 'k;
+        partition_map.insert(n, partitions);
+    }
+
+    println!("pre-computing factorizations");
+    let mut factors = HashMap::new();
+    for n in 2..25000 {
+        factors.insert(n, factors_to_list(factor(n)));
+    }
+
+    'k: for k in 2..12001 {
+        //println!("k: {}", k);
+        'n: for n in k.. {
+            //            println!("n: {}", n);
+            let n_factors = factors.get(&n).unwrap();
+            if n_factors.len() == 1 {
+                continue 'n;
+            }
+            //            println!("n_factors: {}", n_factors.len());
+            let partitions = partition_map.get(&n_factors.len()).unwrap();
+            for p in partitions {
+                let c = partition_count(p);
+                if c <= k.try_into().unwrap() {
+                    // println!(
+                    //     "n: {}, k: {}, c: {}, sum: {}",
+                    //     n,
+                    //     k,
+                    //     c,
+                    //     partition_sum(n_factors, p, c)
+                    // );
+                    if partition_sum(n_factors, p, c) + (k - c as u32) == n {
+                        println!("{} is a product-sum number for k = {}", n, k);
+                        min_product_sums.insert(n);
+                        continue 'k;
+                    }
+                }
             }
         }
     }
-    println!("mins: {:?}", min_product_sums);
-    //    println!("mins: {:?}", mins);
     println!("sum: {}", min_product_sums.iter().fold(0, |acc, x| acc + x));
-    */
+
 }
 
-mod test {
-
-    use super::*;
-
-    #[test]
-    fn test_factor1() {
-        let mut l = factor(12);
-        assert_eq!(l.len(), 2);
-        assert_eq!(*l.get(&2).unwrap(), 2);
-        assert_eq!(*l.get(&3).unwrap(), 1);
-
-        l = factor(25);
-        assert_eq!(l.len(), 1);
-        assert_eq!(*l.get(&5).unwrap(), 2);
-
-        l = factor(13);
-        assert_eq!(l.len(), 1);
-        assert_eq!(*l.get(&13).unwrap(), 1);
-    }
-
-    #[test]
-    fn test_config_iter1() {
-        let mut partitions = HashMap::new();
-        for n in 1..15 {
-            let p = make_all_partitions(n);
-            partitions.insert(n, p);
-        }
-
-        let mut factors = HashMap::new();
-        for n in 2..25000 {
-            factors.insert(n, factor(n));
-        }
-        let n = 24;
-        let mut it = make_configuration_iterator(factors.get(&n).unwrap(), &partitions);
-        for i in it {
-            println!("config: {:?}", i);
-        }
-    }
-
-    #[test]
-    fn test_isPS1() {
-        let mut partitions = HashMap::new();
-        for n in 1..15 {
-            let p = make_all_partitions(n);
-            partitions.insert(n, p);
-        }
-
-        let mut factors = HashMap::new();
-        for n in 2..25000 {
-            factors.insert(n, factor(n));
-        }
-
-        assert!(is_product_sum2(&factors, &partitions, 12, 6));
-        assert!(!is_product_sum2(&factors, &partitions, 7, 3));
-    }
-}
