@@ -1,3 +1,4 @@
+use rayon::prelude::*;
 use std::collections::HashSet;
 use std::{collections::HashMap, convert::TryInto};
 
@@ -95,7 +96,7 @@ impl RGS {
 fn factors_to_list(factors: HashMap<u32, u8>) -> Vec<u32> {
     let mut f = vec![];
     for (&p, &p_n) in factors.iter() {
-        for n in 0..p_n {
+        for _n in 0..p_n {
             f.push(p);
         }
     }
@@ -125,6 +126,24 @@ fn partition_sum(factors: &Vec<u32>, partition: &Vec<u8>, count: usize) -> u32 {
     return terms.iter().fold(0, |acc, &x| acc + x);
 }
 
+fn is_product_sum_p(
+    factors: &HashMap<u32, Vec<u32>>,
+    partition_map: &HashMap<usize, Vec<Vec<u8>>>,
+    n: u32,
+    k: u32,
+) -> bool {
+    //            println!("n: {}", n);
+    let n_factors = factors.get(&n).unwrap();
+    if n_factors.len() == 1 {
+        return false;
+    }
+    //            println!("n_factors: {}", n_factors.len());
+    let partitions = partition_map.get(&n_factors.len()).unwrap();
+    return partitions.par_iter().any(|p| {
+        let c = partition_count(p);
+        return c <= k.try_into().unwrap() && partition_sum(n_factors, p, c) + (k - c as u32) == n;
+    });
+}
 
 fn main() {
     let mut partition_map = HashMap::new();
@@ -148,34 +167,13 @@ fn main() {
 
     'k: for k in 2..12001 {
         //println!("k: {}", k);
-        'n: for n in k.. {
-            //            println!("n: {}", n);
-            let n_factors = factors.get(&n).unwrap();
-            if n_factors.len() == 1 {
-                continue 'n;
-            }
-            //            println!("n_factors: {}", n_factors.len());
-            let partitions = partition_map.get(&n_factors.len()).unwrap();
-            for p in partitions {
-                let c = partition_count(p);
-                if c <= k.try_into().unwrap() {
-                    // println!(
-                    //     "n: {}, k: {}, c: {}, sum: {}",
-                    //     n,
-                    //     k,
-                    //     c,
-                    //     partition_sum(n_factors, p, c)
-                    // );
-                    if partition_sum(n_factors, p, c) + (k - c as u32) == n {
-                        println!("{} is a product-sum number for k = {}", n, k);
-                        min_product_sums.insert(n);
-                        continue 'k;
-                    }
-                }
+        for n in k..((k * 2) + 1) {
+            if is_product_sum_p(&factors, &partition_map, n, k) {
+                //println!("k: {}, mps: {}", k, n);
+                min_product_sums.insert(n);
+                continue 'k;
             }
         }
     }
     println!("sum: {}", min_product_sums.iter().fold(0, |acc, x| acc + x));
-
 }
-
