@@ -11,3 +11,4 @@ debug = 1
 
 [dependencies]
 euler_rust = { path = "../euler-rust" }
+rayon = "1.5"

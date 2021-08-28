@@ -1,5 +1,6 @@
 use std::collections::HashMap;
 use std::collections::HashSet;
+use rayon::prelude::*;
 
 use euler_rust::*;
 
@@ -31,7 +32,7 @@ fn factor(n: u64, primes: &[u64]) -> HashMap<u64, u8> {
     let mut tmp = n;
 //    println!("factoring {}", n);
     for factor in primes {
-////        println!("testing {}", factor);
+//        println!("testing {}", factor);
         if factor * 2 > n {
 //            println!("pau");
             break;
@@ -46,22 +47,25 @@ fn factor(n: u64, primes: &[u64]) -> HashMap<u64, u8> {
     factors
 }
 
-fn divisor_sum(n: u64, primes: &[u64]) -> u64 {
+fn divisor_sum(n: u32, primes: &[u64]) -> u32 {
     //divisors(n, cache).iter().fold(0, |acc, &x| acc + x)
-    let factors = factor(n, primes);
-    let mut result = 1;
+    let factors = factor(n.into(), primes);
+    let mut result:u32 = 1;
 //    println!("divisor_sum: {}", n);
+    if factors.len() == 0 {
+        return 1;  //  "proper" divisors include 1 but omit n
+    }
     for (p, e) in factors.iter() {
 //        println!("p: {}\te:{}", p, e);
-        let step = ((p.pow((e+1).into()) - 1) / (p - 1));
+        let step = ((p.pow((e+1).into()) - 1) / (p - 1)) as u32;
 //        println!("step: {}", step);
         result = result * step;
 //        println!("result: {}", result);
     }
-    result - n
+    (result - n) as u32
 }
 
-fn vec_contains(v:&Vec<u64>, n:u64) -> bool {
+fn vec_contains(v:&Vec<u32>, n:u32) -> bool {
     for &i in v {
         if i == n {
             return true;
@@ -70,80 +74,58 @@ fn vec_contains(v:&Vec<u64>, n:u64) -> bool {
     return false;
 }
 
-fn trim_chain(v:&Vec<u64>, n:u64) -> Vec<u64> {
+fn trim_chain(v:&Vec<u32>, n:u32) -> Vec<u32> {
     let start = v.iter().position(|&i| i == n).unwrap();
     v[start..v.len()].to_vec()
 }
 
-fn is_new_chain(chains:&Vec<Vec<u64>>, this_chain:&Vec<u64>) -> bool {
-    for i in 0..chains.len() {
-        if vec_contains(&chains[i], this_chain[0]) {
-            return false;
-        }
-    }
-    return true;
-}
-
-
 fn main() {
-    let mut n = 2u64;
-    let MAX:u64 = 100000;
-    let mut seen = HashSet::new();
-    let mut chains = Vec::new();
+    const MAX:u32 = 1000000;
+    let mut seen:HashSet<u32> = HashSet::new();
+    let mut longest_chain:Vec<u32> = Vec::new();;
+    let mut this_chain:Vec<u32> = Vec::new();
 //    let mut divisor_cache = HashMap::new();
-    let primes = euler_rust::primes().take_while(|x| *x <= MAX/2).collect::<Vec<u64>>();
+    let primes = euler_rust::primes().take_while(|x| *x as u32 <= MAX/2).collect::<Vec<u64>>();
+    //let mut ar = [0u32;MAX as usize];
     
-    while n <= MAX  {
-//        println!("test {}", n);
+    
+    let ar:HashMap<u32, u32> = (2..MAX).into_par_iter()
+        .map(|x| (x, divisor_sum(x, &primes)))
+        .collect();
+    
+    'outer: for n in (2..MAX) {
         if seen.contains(&n) {
-//            println!("skipping {}, seen size is {}", n, seen.len());
-            n += 1;
             continue;
         }
-        let mut this_chain = vec![n];
-        let mut next = n;
+        let mut this = n;
         loop {
-            next = divisor_sum(next, &primes);
-//            println!("next: {}", next);
-//            println!("this_chain: {:?}", this_chain);
-            if next == 1 {
-                // prime
-                break;
-            }
-            if next == this_chain[this_chain.len()-1] {
-                // perfect number
-                for i in &this_chain {
-                    seen.insert(i.clone());
+            this_chain.push(this);
+            seen.insert(this);
+            match ar.get(&this) {
+                Some(&next) => {
+                    if next > MAX {
+                        this_chain.clear();
+                        continue 'outer;
+                    } else if vec_contains(&this_chain, next) {
+                        this_chain = trim_chain(&this_chain, next);
+                        if this_chain.len() > longest_chain.len() {
+                            longest_chain = this_chain.clone();
+                        }
+                        this_chain.clear();
+                        continue 'outer;
+                    } else {
+                        this = next;
+                    }
+                },
+                None => {
+                    //println!("no successor for {}", this);
+                    this_chain.clear();
+                    continue 'outer;
                 }
-                break;
-            }
-            else if next > MAX   {
-                // not part of a chain
-                for i in &this_chain {
-                    // clone the u64, because otherwise the borrow of this_chain lasts too long
-                    seen.insert(i.clone());
-                }
-                break;
-            } else if vec_contains(&this_chain, next) {
-                this_chain.push(next);
-                for i in &this_chain {
-                    seen.insert(i.clone());
-                }
-                // have we see this chain before?
-                let trimmed_chain = trim_chain(&this_chain, next);
-                if is_new_chain(&chains, &trimmed_chain) {
-                    chains.push(trimmed_chain);
-                }
-                break;
-            } else {
-                this_chain.push(next);
             }
         }
-        n += 1;
     }
-    for v in chains {
-        println!("{:?}", v);
-    }
+    println!("{:?}", longest_chain);
 
 }
 
