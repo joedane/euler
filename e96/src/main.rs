@@ -42,33 +42,34 @@ type Grid = [[Item; 9]; 9];
 
 type Coord = (usize, usize);
 
+#[derive(Copy, Clone)]
+enum Order {
+    BY_ROW, BY_COL, BY_CELL
+}
+
 struct ItemIterator {
-    order: u8,
+    order: Order,
     step: usize, 
     next: usize
 }
 
 impl ItemIterator {
-
-    const BY_ROW: u8 = 1;
-    const BY_COL:u8 = 2;
-    const BY_CELL: u8 = 3;
-
-    fn new(order: u8, step: usize) -> Self {
+    
+    fn new(order: Order, step: usize) -> Self {
         ItemIterator { order, step, next: 0 }
     }
 
     fn make_coord(&self) -> Coord {
-        if self.order == ItemIterator::BY_ROW {
-            (self.step, self.next)
-        } else if self.order == ItemIterator::BY_COL {
-            (self.next, self.step)
-        } else if self.order == ItemIterator::BY_CELL {
-            let row_start = self.order as usize / 3;
-            let col_start = self.order as usize & 3;
-            (row_start + self.next / 3, col_start + self.next % 3)
-        } else {
-            panic!("invalid order ({}", self.order);
+        match self.order {
+            Order::BY_ROW => (self.step, self.next), 
+            Order::BY_COL => (self.next, self.step),
+            Order::BY_CELL => {
+                let row_start = (self.step / 3) * 3;
+                let col_start = (self.step & 3) * 3;
+                println!("step: {}, next: {}", self.step, self.next);
+                println!("row_start: {}, col_start: {}", row_start, col_start);
+                (row_start + self.next / 3, col_start + self.next % 3)  
+            }
         }
     }
 }
@@ -81,10 +82,30 @@ impl Iterator for ItemIterator {
             let n = Some(self.make_coord());
             self.next += 1;
             n
-        } else if self.step < 9 {
-            self.next = 0;
-            let n = Some(self.make_coord());
-            self.step += 1;
+        } else {
+            None
+        }
+    }
+}
+
+struct SectionIterator {
+    order: Order,
+    next: usize
+}
+
+impl SectionIterator {
+
+    fn new(order: Order) -> Self {
+        SectionIterator { order, next:0 }
+    }
+}
+
+impl Iterator for SectionIterator {
+    type Item = ItemIterator;
+    fn next(&mut self) -> Option<Self::Item> {
+        if self.next < 9 {
+            let n = Some(ItemIterator::new(self.order, self.next));
+            self.next += 1;
             n
         } else {
             None
@@ -92,28 +113,17 @@ impl Iterator for ItemIterator {
     }
 }
 
-struct RowIterator {
-    next: usize
+fn make_row_iterator() -> SectionIterator {
+    SectionIterator::new(Order::BY_ROW)
 }
 
-impl RowIterator {
-
-    fn new() -> Self {
-        RowIterator { next:0 }
-    }
+fn make_col_iterator() -> SectionIterator {
+    SectionIterator::new(Order::BY_COL)
 }
 
-impl Iterator for RowIterator {
-    type Item = ItemIterator;
-    fn next(&mut self) -> Option<Self::Item> {
-        if self.next < 9 {
-            Some(ItemIterator::new(ItemIterator::BY_ROW, self.next))
-        } else {
-            None
-        }
-    }
+fn make_cell_iterator() -> SectionIterator {
+    SectionIterator::new(Order::BY_CELL)
 }
-
 #[derive(Clone)]
 struct Board {
     empties: Vec<(usize, usize)>,
@@ -469,6 +479,87 @@ mod tests {
             panic!();
         }
         println!("{:?}", board);
+    }
+
+    #[test]
+    fn test_iter1() {
+        let mut rows = make_row_iterator();
+        if let Some(mut col) = rows.next() {
+            assert_eq!(col.next().unwrap(), (0,0));
+            assert_eq!(col.next().unwrap(), (0,1));
+            assert_eq!(col.next().unwrap(), (0,2));
+            assert_eq!(col.next().unwrap(), (0,3));
+            assert_eq!(col.next().unwrap(), (0,4));
+            assert_eq!(col.next().unwrap(), (0,5));
+            assert_eq!(col.next().unwrap(), (0,6));
+            assert_eq!(col.next().unwrap(), (0,7));
+            assert_eq!(col.next().unwrap(), (0,8));
+            if let Some(last) = col.next() {
+                panic!("Expected the end of a row, found {:?}", last);
+            }
+            if let Some(mut col) = rows.next() {
+                assert_eq!(col.next().unwrap(), (1,0));
+                assert_eq!(col.next().unwrap(), (1,1));
+            } else {
+                panic!();
+            }
+        }  else {
+            panic!();
+        }    
+    }
+
+    #[test]
+    fn test_iter2() {
+        let mut i = make_col_iterator();
+        if let Some(mut j) = i.next() {
+            assert_eq!(j.next().unwrap(), (0,0));
+            assert_eq!(j.next().unwrap(), (1,0));
+            assert_eq!(j.next().unwrap(), (2,0));
+            assert_eq!(j.next().unwrap(), (3,0));
+            assert_eq!(j.next().unwrap(), (4,0));
+            assert_eq!(j.next().unwrap(), (5,0));
+            assert_eq!(j.next().unwrap(), (6,0));
+            assert_eq!(j.next().unwrap(), (7,0));
+            assert_eq!(j.next().unwrap(), (8,0));
+            if let Some(last) = j.next() {
+                panic!("Expected the end of a row, found {:?}", last);
+            }
+            if let Some(mut col) = i.next() {
+                assert_eq!(col.next().unwrap(), (0,1));
+                assert_eq!(col.next().unwrap(), (1,1));
+            } else {
+                panic!();
+            }
+        }  else {
+            panic!();
+        }    
+    }
+
+    #[test]
+    fn test_iter3() {
+        let mut i = make_cell_iterator();
+        if let Some(mut j) = i.next() {
+            assert_eq!(j.next().unwrap(), (0,0));
+            assert_eq!(j.next().unwrap(), (0,1));
+            assert_eq!(j.next().unwrap(), (0,2));
+            assert_eq!(j.next().unwrap(), (1,0));
+            assert_eq!(j.next().unwrap(), (1,1));
+            assert_eq!(j.next().unwrap(), (1,2));
+            assert_eq!(j.next().unwrap(), (2,0));
+            assert_eq!(j.next().unwrap(), (2,1));
+            assert_eq!(j.next().unwrap(), (2,2));
+            if let Some(last) = j.next() {
+                panic!("Expected the end of a row, found {:?}", last);
+            }
+            if let Some(mut col) = i.next() {
+                assert_eq!(col.next().unwrap(), (0,3));
+                assert_eq!(col.next().unwrap(), (0,4));
+            } else {
+                panic!();
+            }
+        }  else {
+            panic!();
+        }    
     }
 
 }
