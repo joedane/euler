@@ -4,7 +4,6 @@ use std::io::{BufRead, BufReader};
 use std::collections::BinaryHeap;
 use std::fmt;
 use std::cmp::Ordering;
-use stringreader::StringReader;
 
 #[derive(Debug, Copy, Clone)]
 struct Item(u32);
@@ -66,7 +65,7 @@ type Coord = (usize, usize);
 
 #[derive(Copy, Clone, Debug)]
 enum Order {
-    BY_ROW, BY_COL, BY_CELL
+    ByRow, ByCol, ByCell
 }
 
 struct ItemIterator {
@@ -83,9 +82,9 @@ impl ItemIterator {
 
     fn make_coord(&self) -> Coord {
         match self.order {
-            Order::BY_ROW => (self.step, self.next), 
-            Order::BY_COL => (self.next, self.step),
-            Order::BY_CELL => {
+            Order::ByRow => (self.step, self.next), 
+            Order::ByCol => (self.next, self.step),
+            Order::ByCell => {
                 let row_start = (self.step / 3) * 3;
                 let col_start = (self.step % 3) * 3; 
                 (row_start + self.next / 3, col_start + self.next % 3)  
@@ -136,16 +135,17 @@ impl Iterator for SectionIterator {
 fn make_iterator(order: Order) -> SectionIterator {
     SectionIterator::new(order)
 }
+
 fn make_row_iterator() -> SectionIterator {
-    SectionIterator::new(Order::BY_ROW)
+    SectionIterator::new(Order::ByRow)
 }
 
 fn make_col_iterator() -> SectionIterator {
-    SectionIterator::new(Order::BY_COL)
+    SectionIterator::new(Order::ByCol)
 }
 
 fn make_cell_iterator() -> SectionIterator {
-    SectionIterator::new(Order::BY_CELL)
+    SectionIterator::new(Order::ByCell)
 }
 
 enum Transition {
@@ -406,15 +406,15 @@ impl Board {
     }
     
     fn try_fill_by_rows(&mut self) -> Transition {
-        self.try_fill(Order::BY_ROW)
+        self.try_fill(Order::ByRow)
     }
 
     fn try_fill_by_cols(&mut self) -> Transition {
-        self.try_fill(Order::BY_COL)
+        self.try_fill(Order::ByCol)
     }
 
     fn try_fill_by_cells(&mut self) -> Transition {
-        self.try_fill(Order::BY_CELL)
+        self.try_fill(Order::ByCell)
     }
 
     fn try_fill(&mut self, order:Order) -> Transition {
@@ -630,7 +630,7 @@ fn solve(board: &mut Board) -> Option<Board> {
         match board.try_fill_once() {
             Transition::Invalid => return None,
             Transition::None => break,
-            Transition::Some(k) => {
+            Transition::Some(_) => {
         //          println!("filled {}", k);
                 board.assert_valid();
             }
@@ -653,7 +653,7 @@ fn solve(board: &mut Board) -> Option<Board> {
 }
 
 fn main() {
-    let mut boards = read_boards("p096_sudoku.txt").unwrap();
+    let boards = read_boards("p096_sudoku.txt").unwrap();
     for mut board in boards {
         println!("solving board {}", board.title);
         println!("{:?}", board);
@@ -668,10 +668,11 @@ fn main() {
 mod tests {
 
     use super::*;
+    use stringreader::StringReader;
 
     #[test]
     fn test_read1() {
-        let mut sr = StringReader::new("Test Board\n\
+        let sr = StringReader::new("Test Board\n\
         123456789\n\
         000000000\n\
         000000000\n\
@@ -681,12 +682,12 @@ mod tests {
         000000000\n\
         000000000\n\
         000000000");
-        let mut board = read_board(&mut BufReader::new(sr).lines()).unwrap();
+        read_board(&mut BufReader::new(sr).lines()).unwrap();
     }
  
     #[test]
     fn test_read2() {
-        let mut sr = StringReader::new("Test Board\n\
+        let sr = StringReader::new("Test Board\n\
         123456780\n\
         000000000\n\
         000000000\n\
@@ -706,7 +707,7 @@ mod tests {
 
     #[test]
     fn test_read3() {
-        let mut sr = StringReader::new("Test Board\n\
+        let sr = StringReader::new("Test Board\n\
         123450780\n\
         000000000\n\
         000000000\n\
@@ -728,7 +729,7 @@ mod tests {
 
     #[test]
     fn test_read4() {
-        let mut sr = StringReader::new("Test Board\n\
+        let sr = StringReader::new("Test Board\n\
         123000000\n\
         456000000\n\
         089000000\n\
@@ -830,7 +831,7 @@ mod tests {
 
     #[test]
     fn test_solve1() {
-        let mut sr = StringReader::new("Test Board\n\
+        let sr = StringReader::new("Test Board\n\
         094756108\n\
         278913564\n\
         001042730\n\
@@ -850,7 +851,7 @@ mod tests {
 
     #[test]
     fn test_solve2() {
-        let mut sr = StringReader::new("Test Board\n\
+        let sr = StringReader::new("Test Board\n\
         200080300\n\
         060070084\n\
         030500209\n\
@@ -873,7 +874,7 @@ mod tests {
 
     #[test]
 fn test_find1() {
-    let mut sr = StringReader::new("Test Board\n\
+    let sr = StringReader::new("Test Board\n\
     094756108\n\
     278913564\n\
     001042730\n\
@@ -883,7 +884,7 @@ fn test_find1() {
     513087602\n\
     987020013\n\
     460391870");
-    let mut board = read_board(&mut BufReader::new(sr).lines()).unwrap();
+    let board = read_board(&mut BufReader::new(sr).lines()).unwrap();
     if let Some(b) = board.empty_iter().next() {
         println!("Success:\n{:?}", b);
         println!("first: {:?}", b.get_possible_items().next().unwrap())
