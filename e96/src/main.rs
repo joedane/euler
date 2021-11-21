@@ -1,8 +1,9 @@
+#![allow(unused_imports, dead_code, non_snake_case)]
+
 use lazy_static::lazy_static;
 use log::{error, info};
 use simplelog::*;
-use std::borrow::BorrowMut;
-use std::cell::RefCell;
+use std::cell::{Ref, RefCell};
 use std::cmp::Ordering;
 use std::collections::{BinaryHeap, HashSet};
 use std::fmt;
@@ -177,6 +178,15 @@ struct TransitionData {
     coord: Coord,
 }
 
+impl TransitionData {
+    fn dump(&self) {
+        println!(
+            "set ({}, {}) to {:?}",
+            self.coord.0, self.coord.1, self.item
+        );
+    }
+}
+
 enum Transition {
     None,
     One(Vec<TransitionData>),
@@ -257,8 +267,8 @@ struct DBGNode {
     code: String,
     board: Board,
     transitions: Option<Vec<TransitionData>>,
-    parent: Weak<Cell<DBGNode>>,
-    children: Vec<Rc<Cell<DBGNode>>>,
+    parent: Weak<RefCell<DBGNode>>,
+    children: Vec<Rc<RefCell<DBGNode>>>,
 }
 
 impl DBGNode {
@@ -272,11 +282,39 @@ impl DBGNode {
         }
     }
 
+    fn add_child(
+        &mut self,
+        code: String,
+        board: Board,
+        parent: Rc<RefCell<DBGNode>>,
+    ) -> Rc<RefCell<DBGNode>> {
+        let new_node = Rc::new(RefCell::new(DBGNode::new(
+            code,
+            board,
+            Rc::downgrade(&parent),
+        )));
+        new_node.borrow_mut().parent = Rc::downgrade(&parent);
+        let ret = new_node.clone();
+        self.children.push(new_node);
+        ret
+    }
+
     fn add_transitions(&mut self, mut txs: Vec<TransitionData>) {
         if self.transitions.is_none() {
             self.transitions = Some(txs)
         } else {
             self.transitions.as_mut().unwrap().append(&mut txs)
+        }
+    }
+
+    fn dump_transitions(&self) {
+        if let Some(ts) = &self.transitions {
+            println!("{} transitions", ts.len());
+            for t in ts {
+                t.dump();
+            }
+        } else {
+            println!("no transition");
         }
     }
 }
@@ -290,7 +328,7 @@ struct Board {
 
 impl fmt::Display for Board {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "#Board: [{}]", self.to_digits());
+        write!(f, "#Board: [{}]", self.to_digits())?;
         Ok(())
     }
 }
@@ -786,30 +824,25 @@ lazy_static! {
     static ref BOARDS: Mutex<HashSet<String>> = Mutex::new(HashSet::new());
 }
 
-fn dump(prefix: String, node: &DBGNode, boards: bool) {
-    let start_boards = node
-        .code
-        .eq("#Board: [22C2D9116AC9D5A82A6985C44DC6A6805FAC68D71E7C0D0D5B4ED23995B67D1E04653]");
-
-    println!("{}{}", prefix, node.code);
-    if boards || start_boards {
-        println!("{:?}", node.board);
+fn dump(prefix: String, node_ref: Rc<RefCell<DBGNode>>, look_for: &str) {
+    let node = node_ref.borrow();
+    if node.code.eq(look_for) {
+        let mut steps = vec![Rc::clone(&node_ref)];
+        let mut maybe_parent = node.parent.upgrade();
+        while let Some(parent) = maybe_parent {
+            steps.push(Rc::clone(&parent));
+            maybe_parent = parent.borrow().parent.upgrade();
+        }
+        println!("SHOW: {}\n{} steps", node.board, steps.len());
+        for b in steps.iter().rev() {
+            println!("{:?}", b.borrow().board);
+            b.borrow().dump_transitions();
+            println!("then ...");
+        }
     }
     for child in &node.children {
-        dump(
-            format!("{}{}", prefix, "   "),
-            &child.borrow(),
-            boards || start_boards,
-        );
+        dump(format!("{}{}", prefix, "   "), child.clone(), look_for);
     }
-}
-
-fn trace_boards(code: &str, root: &DBGNode) {
-    /*
-    let nav_root = root.navigate(None);
-    let mut path_vec = vec![];
-    path_vec.push(nav_root);
-    */
 }
 
 fn solve(board: &mut Board, this_node: Rc<RefCell<DBGNode>>) -> Option<Board> {
@@ -822,11 +855,12 @@ fn solve(board: &mut Board, this_node: Rc<RefCell<DBGNode>>) -> Option<Board> {
     {
         let mut B = BOARDS.lock().unwrap();
         let s = format!("{}", board);
+        println!("added {}", s);
         if B.contains(&s) {
             panic!("loop detected: {}", s);
             //return None;
         }
-        B.insert(s);
+        B.insert(s.clone());
     }
 
     //println!("solving ...");
@@ -854,12 +888,11 @@ fn solve(board: &mut Board, this_node: Rc<RefCell<DBGNode>>) -> Option<Board> {
     for empty in board.empty_iter() {
         for item in empty.get_possible_items() {
             let mut extended_board = board.extend(&empty.coord, item);
-            let mut new_node = Rc::new(RefCell::new(DBGNode::new(
+            let new_node = this_node.borrow_mut().add_child(
                 format!("{}", extended_board),
                 extended_board.clone(),
-                Rc::downgrade(&this_node),
-            )));
-            this_node.borrow_mut().children.push(new_node);
+                this_node.clone(),
+            );
             if let Some(answer) = solve(&mut extended_board, new_node) {
                 return Some(answer);
             }
@@ -872,12 +905,22 @@ fn main() {
     let _ = SimpleLogger::init(LevelFilter::Info, Config::default());
 
     let mut boards = read_boards("p096_sudoku.txt").unwrap();
-    let mut root = DBGNode::new("ROOT".to_string(), boards[1].clone());
+    let root = Rc::new(RefCell::new(DBGNode::new(
+        "ROOT".to_string(),
+        boards[1].clone(),
+        Weak::new(),
+    )));
 
     if let Err(e) = std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| {
-        solve(&mut boards[1], &mut root);
+        solve(&mut boards[1], root.clone());
     })) {
-        dump("".to_string(), &root, false);
+        if let Some(s) = e.downcast_ref::<String>() {
+            let id = &s[(s.find(":").unwrap() + 2)..];
+            println!("look for: {}", id);
+            dump("".to_string(), root, id);
+        } else {
+            println!("EGAD!");
+        }
     }
 
     /*
