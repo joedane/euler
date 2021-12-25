@@ -1,7 +1,53 @@
-use rayon::prelude::*;
-use rug::Rational;
+
+//use rayon::prelude::*;
+//use rug::Rational;
+
+struct Sqrt2Convergents {
+    a_1: u64,
+    a_2: u64,
+    b_1: u64,
+    b_2: u64
+}
+
+impl Sqrt2Convergents {
+
+    fn new() -> Self {
+        Sqrt2Convergents {
+            a_1: 1,
+            a_2: 1,
+            b_1: 1,
+            b_2: 0
+        }
+    }
+}
+
+impl Iterator for Sqrt2Convergents {
+
+    type Item = (u64, u64);
+
+    fn next(&mut self) -> Option<Self::Item> {
+        let val = (2*self.a_1 + self.a_2, 2*self.b_1 + self.b_2);
+        self.a_2 = self.a_1;
+        self.a_1 = val.0;
+        self.b_2 = self.b_1;
+        self.b_1 = val.1;
+        Some(val)
+    }
+}
 
 fn main() {
+
+    let s = Sqrt2Convergents::new();
+
+    let p = 15u64;
+    let q = 21u64;
+
+    let results = s.map(|(r, s)|(p*r + 2*q*s, p*s + q*r)).take(10).collect::<Vec<(u64, u64)>>();
+
+    println!("{:?}", results);
+
+
+    /*
     let target = Rational::from((1, 2));
 
     let result = (1_000_000u64..2_000_000)
@@ -30,4 +76,6 @@ fn main() {
             }
         });
 
-    println!("{:?}", result);}
+    println!("{:?}", result);
+*/
+    }
